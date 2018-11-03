@@ -4,6 +4,23 @@
             "outputFile": "C:\\Users\\kevin\\Desktop\\ICS4U0\\AirQuality\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de\\values-de.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\c13f7cc42ea6196b4bad749d8550e28f\\res\\values-de\\values-de.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,112",
+                        "endColumns": "56,62",
+                        "endOffsets": "107,170"
+                    },
+                    "to": {
+                        "startLines": "19,20",
+                        "startColumns": "4,4",
+                        "startOffsets": "1852,1909",
+                        "endColumns": "56,62",
+                        "endOffsets": "1904,1967"
+                    }
+                },
+                {
                     "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.0.aar\\adb490c7b3435c57dce6a71ab33ec70b\\res\\values-de\\values-de.xml",
                     "from": {
                         "startLines": "2",
@@ -13,11 +30,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "22",
                         "startColumns": "4",
-                        "startOffsets": "1934",
+                        "startOffsets": "2054",
                         "endColumns": "100",
-                        "endOffsets": "2030"
+                        "endOffsets": "2150"
                     }
                 },
                 {
@@ -28,6 +45,13 @@
                         "startOffsets": "105,210,308,420,506,611,726,803,879,961,1072,1175,1274,1385,1487,1594,1750,1852",
                         "endColumns": "104,97,111,85,104,114,76,75,81,110,102,98,110,101,106,155,101,81",
                         "endOffsets": "205,303,415,501,606,721,798,874,956,1067,1170,1269,1380,1482,1589,1745,1847,1929"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,210,308,420,506,611,726,803,879,961,1072,1175,1274,1385,1487,1594,1750,1972",
+                        "endColumns": "104,97,111,85,104,114,76,75,81,110,102,98,110,101,106,155,101,81",
+                        "endOffsets": "205,303,415,501,606,721,798,874,956,1067,1170,1269,1380,1482,1589,1745,1847,2049"
                     }
                 }
             ]

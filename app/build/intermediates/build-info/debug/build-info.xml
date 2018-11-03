@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
     abi="armeabi-v7a,armeabi"
-    api-level="23"
+    api-level="24"
     build-mode="COLD"
-    density="xhdpi"
+    density="hdpi"
     format="10"
     ir-eligibility="FIELD_REMOVED"
     plugin-version="3.1.4"
-    timestamp="1540782766549"
+    timestamp="1541216695521"
     token="-3158576510930610467"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="776" />
+        duration="621" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="103" />
+        duration="48" />
     <task
         name="verifier"
-        duration="43" />
+        duration="22" />
 
     <artifact
         location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
-    <artifact
-        location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1540778982241"
+        timestamp="1541216371059"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
         <artifact
             location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -68,30 +68,15 @@
         <artifact
             location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1540779591440"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
         ir-eligibility="FIELD_REMOVED"
-        timestamp="1540782766549"
+        timestamp="1541216695521"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
-        <artifact
-            location="C:\Users\kevin\Desktop\ICS4U0\AirQuality\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>

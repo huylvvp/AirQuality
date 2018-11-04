@@ -22,7 +22,10 @@ import android.view.View;
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private CardView exploreCard, listCard, settingsCard, exitCard;
+    private CardView exploreCard;
+    private CardView listCard;
+    private CardView settingsCard;
+    private CardView exitCard;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,37 +34,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_home);
 
         //  Declare a new thread to do a preference check
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //  Initialize SharedPreferences
-                SharedPreferences getPrefs = PreferenceManager
-                        .getDefaultSharedPreferences(getBaseContext());
+        Thread t = new Thread(() -> {
+            //  Initialize SharedPreferences
+            SharedPreferences getPrefs = PreferenceManager
+                    .getDefaultSharedPreferences(getBaseContext());
 
-                //  Create a new boolean and preference and set it to true
-                boolean isFirstStart = getPrefs.getBoolean("firstStart", true);
+            //  Create a new boolean and preference and set it to true
+            boolean isFirstStart = getPrefs.getBoolean("firstStart", true);
 
-                //  If the activity has never started before...
-                if (isFirstStart) {
+            //  If the activity has never started before...
+            if (isFirstStart) {
 
-                    //  Launch app intro
-                    final Intent i = new Intent(MainActivity.this, OnboardingActivity.class);
+                //  Launch app intro
+                final Intent i = new Intent(MainActivity.this, OnboardingActivity.class);
 
-                    runOnUiThread(new Runnable() {
-                        @Override public void run() {
-                            startActivity(i);
-                        }
-                    });
+                runOnUiThread(() -> startActivity(i));
 
-                    //  Make a new preferences editor
-                    SharedPreferences.Editor e = getPrefs.edit();
+                //  Make a new preferences editor
+                SharedPreferences.Editor e = getPrefs.edit();
 
-                    //  Edit preference to make it false because we don't want this to run again
-                    e.putBoolean("firstStart", false);
+                //  Edit preference to make it false because we don't want this to run again
+                e.putBoolean("firstStart", false);
 
-                    //  Apply changes
-                    e.apply();
-                }
+                //  Apply changes
+                e.apply();
             }
         });
 

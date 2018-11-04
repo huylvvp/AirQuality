@@ -2,6 +2,7 @@ package com.kevinlu.airquality;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import org.jetbrains.annotations.Contract;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -29,21 +32,21 @@ import java.util.stream.Collectors;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private Context context;
-    private List<Station> stationList;
+    private ArrayList<Station> stationList;
 
     /**
      * This is the constructor for the Adapter class.
      * @param context - This is a Context object
      * @param stationList - This is an ArrayList of Station objects
      */
-    public Adapter(Context context, List<Station> stationList) {
+    public Adapter(Context context, ArrayList<Station> stationList) {
         this.context = context;
         this.stationList = stationList;
     }
 
     /**
-     * @param parent
-     * @param viewType
+     * @param parent ViewGroup object
+     * @param viewType an integer
      * @return the ViewHolder object
      */
     @Override
@@ -88,21 +91,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
      * @param mainPollutant - This is a String of the short form of the pollutant name
      * @return Full form of the short form pollutant
      */
-    public String decodePollutant(String mainPollutant) {
-        if (mainPollutant.equals("p2")) {
-            return "PM 2.5";
-        } else if (mainPollutant.equals("p1")) {
-            return "PM 10";
-        } else if (mainPollutant.equals("o3")) {
-            return "Ozone";
-        } else if (mainPollutant.equals("n2")) {
-            return "Nitrogen Dioxide";
-        } else if (mainPollutant.equals("s2")) {
-            return "Sulfur Dioxide";
-        } else if (mainPollutant.equals("co")) {
-            return "Carbon Monoxide";
-        } else {
-            return "Unknown Pollutant";
+    private String decodePollutant(String mainPollutant) {
+        switch (mainPollutant) {
+            case "p2": return "PM 2.5";
+            case "p1": return "PM 10";
+            case "o3": return "Ozone";
+            case "n2": return "Nitrogen Dioxide";
+            case "s2": return "Sulfur Dioxide";
+            case "co": return "Carbon Monoxide";
+            default: return "Unknown Pollutant";
         }
     }
 
@@ -111,7 +108,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
      * @param aqius - This is the air quality index by U.S. EPA standards
      * @return the rank of the air quality index, a String
      */
-    public String rankAQIUS(int aqius) {
+    private String rankAQIUS(int aqius) {
         if (aqius >= 0 && aqius <= 50) {
             return "Good";
         } else if (aqius >= 51 && aqius <= 100) {
@@ -130,11 +127,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     /**
-     * This method converts a numerical AQI value to its severity ranking in words
+     * This function sets the color corresponding to the AQI
+     * @param holder - A ViewHolder object
      * @param aqius - This is the air quality index by U.S. EPA standards
-     * @return the rank of the air quality index, a String
      */
-    public void setColorAQIUS(ViewHolder holder, int aqius) {
+    private void setColorAQIUS(ViewHolder holder, int aqius) {
         if (aqius >= 0 && aqius <= 50) {
             holder.textViewRating.setBackgroundColor(ContextCompat.getColor(context, R.color.aqius_good));
         } else if (aqius >= 51 && aqius <= 100) {
@@ -169,7 +166,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
         LinearLayout linearLayout;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.imageView);
@@ -182,5 +179,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     public void filterList(ArrayList<Station> filteredList) {
         stationList = filteredList;
+        notifyDataSetChanged();
     }
 }

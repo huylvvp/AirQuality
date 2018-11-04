@@ -2,7 +2,7 @@ package com.kevinlu.airquality;
 
 //import statements
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,26 +11,23 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.FileNotFoundException;
+import org.jetbrains.annotations.NotNull;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * The MainActivity class makes use of the Station classes and
@@ -49,7 +46,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private Adapter adapter;
     private FileOutputStream fileOutputStream;
 
-    private List<Station> stationList;
+    private ArrayList<Station> stationList;
 
     @Override
     /*
@@ -73,8 +70,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
             @Override
             public void onClick(View v) {
                 //When the icon is clicked, do go back to the MainActivity
-                //TODO: Implement go back to MainActivity onClick
-                Toast.makeText(getApplicationContext(), "Back button clicked", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
         //Set the title of the toolbar to "Air Quality List"
@@ -101,7 +98,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         stationList.add(beijing);
 
         //Initialize the recyclerView so it can display the data in the ArrayList
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         //Setting some properties of the recyclerView
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -129,8 +126,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu here
         getMenuInflater().inflate(R.menu.list_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.item_search);
-        SearchView searchView = (SearchView) menuItem.getActionView();
+        MenuItem searchItem = menu.findItem(R.id.item_search);
+        SearchView searchView = (SearchView) searchItem.getActionView();
         searchView.setOnQueryTextListener(this);
         return true;
     }
@@ -227,18 +224,13 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         //Switch and case on the MenuItem object's id
         switch (item.getItemId()) {
             case R.id.sort_best_aqi:
-                msg = "sorting by best AQI.";
+                msg = "Sorting by best AQI";
                 sortAQIAscending();
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sort_worst_aqi:
-                msg = "sorting by worst AQI.";
+                msg = "Sorting by worst AQI";
                 sortAQIDescending();
-                Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.item_search:
-                //TODO: implement a search function (as per Searching task)
-                msg = "displaying search (not implemented)";
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 break;
         }
@@ -255,73 +247,65 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         fileOutputStream = null;
         //Request a string response from the provided URL, create a new StringRequest object
+        /*
+         * @param response - This is the response (JSON file) from the API
+         */
+        //This is what will happen when there is an error during the response
+        /*
+         * @param error - This is the error that Volley encountered
+         */
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    /*
-                     * @param response - This is the response (JSON file) from the API
-                     */
-                    public void onResponse(String response) {
-                        //Using Gson to turn JSON to Java object of Station
-                        //Create new GsonBuilder and Gson objects
-                        GsonBuilder gsonBuilder = new GsonBuilder();
-                        Gson gson = gsonBuilder.create();
-                        //Create a new Station object and use Gson to deserialize JSON data
-                        //into the Station object
-                        Station station = gson.fromJson(response, Station.class);
-                        //All file names are in the format of City.txt
-                        String fileName = station.getData().getCity() + ".txt";
-                        //Add the new Station object to the ArrayList of Station objects
-                        //This is to create another entry in the RecyclerView
-                        //Tell the RecyclerView adapter that our data is updated
-                        //because Station was just to the ArrayList
-                        stationList.add(station);
-                        adapter.notifyDataSetChanged();
-                        //openFileOutput will throw a FileNotFoundException so
-                        //it is surrounded in a try - catch block to handle it
-                        try {
-                            //First try to open a file output, it has parameters
-                            //of the file name and is set to MODE_PRIVATE so only
-                            //the application can access it
-                            fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
-                            //Now the response from the API is written to the file
-                            fileOutputStream.write(response.getBytes());
-                            //Send a Toast to the user informing them that the data
-                            //has been saved to a location on their device
-                            Toast.makeText(getApplicationContext(), "Station " + station.getData().getCity()
-                                    + " saved to: " + getFilesDir() + "/" + fileName, Toast.LENGTH_LONG).show();
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } finally {
-                            //Checking if fileOutputStream is not null
-                            //then it has successfully saved the file to
-                            //the file system of the device, again it is
-                            //surrounded in a try - catch block because
-                            //close() will throw a FileNotFoundException
-                            if (fileOutputStream != null) {
-                                try {
-                                    fileOutputStream.close();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
+                response -> {
+                    //Using Gson to turn JSON to Java object of Station
+                    //Create new GsonBuilder and Gson objects
+                    GsonBuilder gsonBuilder = new GsonBuilder();
+                    Gson gson = gsonBuilder.create();
+                    //Create a new Station object and use Gson to deserialize JSON data
+                    //into the Station object
+                    Station station = gson.fromJson(response, Station.class);
+                    //All file names are in the format of City.txt
+                    String fileName = station.getData().getCity() + ".txt";
+                    //Add the new Station object to the ArrayList of Station objects
+                    //This is to create another entry in the RecyclerView
+                    //Tell the RecyclerView adapter that our data is updated
+                    //because Station was just to the ArrayList
+                    stationList.add(station);
+                    adapter.notifyDataSetChanged();
+                    //openFileOutput will throw a FileNotFoundException so
+                    //it is surrounded in a try - catch block to handle it
+                    try {
+                        //First try to open a file output, it has parameters
+                        //of the file name and is set to MODE_PRIVATE so only
+                        //the application can access it
+                        fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+                        //Now the response from the API is written to the file
+                        fileOutputStream.write(response.getBytes());
+                        //Send a Toast to the user informing them that the data
+                        //has been saved to a location on their device
+                        Toast.makeText(getApplicationContext(), "Station " + station.getData().getCity()
+                                + " saved to: " + getFilesDir() + "/" + fileName, Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        //Checking if fileOutputStream is not null
+                        //then it has successfully saved the file to
+                        //the file system of the device, again it is
+                        //surrounded in a try - catch block because
+                        //close() will throw a FileNotFoundException
+                        if (fileOutputStream != null) {
+                            try {
+                                fileOutputStream.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
                         }
-                        //Write the API response data to the log console
-                        Log.d("API RESPONSE", response);
                     }
-                }, new Response.ErrorListener() {
-            //This is what will happen when there is an error during the response
-            /*
-             * @param error - This is the error that Volley encountered
-             */
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //Write the error from Volley to the log console
-                Log.d("VOLLEY ERROR", error.toString());
-            }
-        });
+                    //Write the API response data to the log console
+                    Log.d("API RESPONSE", response);
+                }, error -> {
+                    //Write the error from Volley to the log console
+                    Log.d("VOLLEY ERROR", error.toString());
+                });
         //Add the request to the RequestQueue
         requestQueue.add(stringRequest);
     }
@@ -339,6 +323,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
      */
     @Override
     public boolean onQueryTextSubmit(String query) {
+        //The RecyclerView updates as the user types in the SearchView
+        //thus eliminating the need to submit the search query text
         return false;
     }
 
@@ -351,20 +337,32 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
      */
     @Override
     public boolean onQueryTextChange(String newText) {
+        //Use the filter function to filter results based on
+        //the user's input in the SearchView text field
         filter(newText.toLowerCase());
         return true;
     }
 
-    private void filter(String text) {
-        ArrayList<Station> filteredList = new ArrayList<>();
+    /**
+     * Called when the query text is changed by the user.
+     * This function uses a Linear Search algorithm to
+     * only display items that contains the String user inputted.
+     *
+     * @param text the new content of the query text field.
+     */
+    private void filter(@NotNull String text) {
+        if (text.length() == 0) {
+            adapter.filterList(stationList);
+        } else {
+            ArrayList<Station> filteredList = new ArrayList<>();
 
-        for (Station item : stationList) {
-            if (item.getData().getCity().toLowerCase().contains(text.toLowerCase())) {
-                filteredList.add(item);
+            for (Station item : stationList) {
+                if (item.getData().getCity().toLowerCase().contains(text.toLowerCase())) {
+                    filteredList.add(item);
+                }
             }
-        }
 
-        adapter.filterList(filteredList);
-        adapter.notifyDataSetChanged();
+            adapter.filterList(filteredList);
+        }
     }
 }

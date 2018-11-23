@@ -5,13 +5,22 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.kc.unsplash.Unsplash;
+import com.kc.unsplash.models.Download;
+import com.kc.unsplash.models.Photo;
+import com.kc.unsplash.models.SearchResults;
+import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.Contract;
 
@@ -33,6 +42,15 @@ import java.util.stream.Collectors;
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private Context context;
     private ArrayList<Station> stationList;
+    private OnItemClickListener onItemClickListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        onItemClickListener = listener;
+    }
 
     /**
      * This is the constructor for the Adapter class.
@@ -78,12 +96,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.textViewRating.setText(aqius + "");
         setColorAQIUS(holder, aqius);
         holder.textViewPrice.setText(rankAQIUS(aqius));
-//        holder.imageView.setImageDrawable(context.getResources().getDrawable());
-
-        holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(context, CityActivity.class);
-            context.startActivity(intent);
-        });
+        //DEPRECATED. NOW USING AN INTERFACE TO LAUNCH NEW ACTIVITY.
+//        holder.itemView.setOnClickListener(view -> {
+//            Intent intent = new Intent(context, CityActivity.class);
+//            context.startActivity(intent);
+//        });
     }
 
     /**
@@ -169,11 +186,23 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.listCityImage);
             textViewTitle = itemView.findViewById(R.id.textViewTitle);
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewRating = itemView.findViewById(R.id.textViewRating);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (onItemClickListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            onItemClickListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 

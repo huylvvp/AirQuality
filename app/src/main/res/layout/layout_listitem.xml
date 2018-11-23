@@ -8,7 +8,7 @@
     android:padding="8dp">
     <!--android:background="@drawable/border"-->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/listCityImage"
         android:layout_width="105dp"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -24,7 +24,7 @@
             android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/listCityImage"
             android:text="City, Province, Country"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
             android:textColor="#000000"
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewTitle"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/listCityImage"
             android:text="Main Pollutant"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
 
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewShortDesc"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/listCityImage"
             android:background="@color/colorError"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewRating"
-            android:layout_toRightOf="@id/imageView"
+            android:layout_toRightOf="@id/listCityImage"
             android:textSize="18sp"
             android:text="AQI RATING"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"

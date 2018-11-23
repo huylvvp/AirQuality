@@ -28,6 +28,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * The MainActivity class makes use of the Station classes and
@@ -39,7 +40,14 @@ import java.util.Collections;
  *
  */
 
-public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, Adapter.OnItemClickListener {
+    public static final String EXTRA_CITY_NAME = "cityName";
+    public static final String EXTRA_COORDINATES = "coordinates";
+    public static final String EXTRA_TIMESTAMP = "timestamp";
+    public static final String EXTRA_AQI_US = "aqiUS";
+    public static final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
+    public static final String EXTRA_AQI_CN = "aqiCN";
+    public static final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
 
     private static final String url = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
     private RecyclerView recyclerView;
@@ -83,17 +91,33 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         stationList = new ArrayList<>();
 
         //Adding a few test items to the stationList to test out the sort functions
-        Pollution guangzhouPollution = new Pollution(); guangzhouPollution.setAqius(110); guangzhouPollution.setMainus("p2");
-        Current guangzhouCurrent = new Current(); guangzhouCurrent.setPollution(guangzhouPollution);
-        Data guangzhouData = new Data(); guangzhouData.setCurrent(guangzhouCurrent); guangzhouData.setCountry("China"); guangzhouData.setState("Guangdong"); guangzhouData.setCity("Guangzhou");
-        Station guangzhou = new Station(); guangzhou.setData(guangzhouData);
+        Pollution guangzhouPollution = new Pollution();
+        guangzhouPollution.setAqius(110);
+        guangzhouPollution.setMainus("p2");
+        Current guangzhouCurrent = new Current();
+        guangzhouCurrent.setPollution(guangzhouPollution);
+        Data guangzhouData = new Data();
+        guangzhouData.setCurrent(guangzhouCurrent);
+        guangzhouData.setCountry("China");
+        guangzhouData.setState("Guangdong");
+        guangzhouData.setCity("Guangzhou");
+        Station guangzhou = new Station();
+        guangzhou.setData(guangzhouData);
 
         stationList.add(guangzhou);
 
-        Pollution beijingPollution = new Pollution(); beijingPollution.setAqius(217); beijingPollution.setMainus("p2");
-        Current beijingCurrent = new Current(); beijingCurrent.setPollution(beijingPollution);
-        Data beijingData = new Data(); beijingData.setCurrent(beijingCurrent); beijingData.setCountry("China"); beijingData.setState("Beijing"); beijingData.setCity("Beijing");
-        Station beijing = new Station(); beijing.setData(beijingData);
+        Pollution beijingPollution = new Pollution();
+        beijingPollution.setAqius(217);
+        beijingPollution.setMainus("p2");
+        Current beijingCurrent = new Current();
+        beijingCurrent.setPollution(beijingPollution);
+        Data beijingData = new Data();
+        beijingData.setCurrent(beijingCurrent);
+        beijingData.setCountry("China");
+        beijingData.setState("Beijing");
+        beijingData.setCity("Beijing");
+        Station beijing = new Station();
+        beijing.setData(beijingData);
 
         stationList.add(beijing);
 
@@ -109,6 +133,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
 
         //Set the recyclerView's adapter to the adapter object
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(ListActivity.this);
 
         //Use the function loadRecyclerViewData to get data from the API
         loadRecyclerViewData();
@@ -120,7 +145,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     /**
      * @param menu - This is a menu object used to inflate the
      *             menu according to the menu layout list_menu
-     * @return     - Set to true
+     * @return - Set to true
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -188,8 +213,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
             int j = i - 1;
 
             while (j >= 0 && stationList.get(j).getData().getCurrent().getPollution().getAqius() > key) {
-                    stationList.set(j + 1, stationList.get(j));
-                    j = j - 1;
+                stationList.set(j + 1, stationList.get(j));
+                j = j - 1;
             }
             stationList.set(j + 1, keyStation);
         }
@@ -215,7 +240,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     /**
      * @param item - This is a MenuItem object, each item in the menu is
      *             its own object
-     * @return     - super.onOptionsItemSelected(item)
+     * @return - super.onOptionsItemSelected(item)
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -303,9 +328,9 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                     //Write the API response data to the log console
                     Log.d("API RESPONSE", response);
                 }, error -> {
-                    //Write the error from Volley to the log console
-                    Log.d("VOLLEY ERROR", error.toString());
-                });
+            //Write the error from Volley to the log console
+            Log.d("VOLLEY ERROR", error.toString());
+        });
         //Add the request to the RequestQueue
         requestQueue.add(stringRequest);
     }
@@ -351,18 +376,74 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
      * @param text the new content of the query text field.
      */
     private void filter(@NotNull String text) {
+        long startTime = System.currentTimeMillis();
         if (text.length() == 0) {
             adapter.filterList(stationList);
         } else {
             ArrayList<Station> filteredList = new ArrayList<>();
 
             for (Station item : stationList) {
-                if (item.getData().getCity().toLowerCase().contains(text.toLowerCase())) {
+                if (item.getData().getCity().toLowerCase().contains(text)) {
                     filteredList.add(item);
                 }
             }
-
             adapter.filterList(filteredList);
         }
+        long endTime = System.currentTimeMillis();
+        Log.d("Binary Search time", (endTime - startTime) + "");
     }
+
+    /**
+     * Called when the query text is changed by the user.
+     * This function uses a Binary Search algorithm to
+     * only display items that contains the String user inputted.
+     *
+     * @param aqi integer value of AQI to search city with AQI value
+     */
+    private void filterBinarySearch(int aqi) {
+        long startTime = System.currentTimeMillis();
+        sortAQIAscending();
+        int left = 0;
+        int right = stationList.size() - 1;
+        ArrayList<Station> filteredList = new ArrayList<>();
+
+        while (left <= right) {
+            int midPoint = left + (right - 1) / 2;
+
+            if (stationList.get(midPoint).getData().getCurrent().getPollution().getAqius() == aqi) {
+                filteredList.add(stationList.get(midPoint));
+            }
+
+            if (stationList.get(midPoint).getData().getCurrent().getPollution().getAqius() < aqi) {
+                left = midPoint + 1;
+            } else {
+                right = midPoint - 1;
+            }
+        }
+        long endTime = System.currentTimeMillis();
+        Log.d("Binary Search time", (endTime - startTime) + "");
+        adapter.filterList(filteredList);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent cityIntent = new Intent(this, CityActivity.class);
+        Station clickedStation = stationList.get(position);
+
+        cityIntent.putExtra(EXTRA_CITY_NAME, clickedStation.getData().getCity());
+        cityIntent.putExtra(EXTRA_COORDINATES, clickedStation.getData().getLocation().getCoordinates().toString());
+        cityIntent.putExtra(EXTRA_TIMESTAMP, clickedStation.getData().getCurrent().getPollution().getTs());
+        cityIntent.putExtra(EXTRA_AQI_US, clickedStation.getData().getCurrent().getPollution().getAqius().toString());
+        cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_US, clickedStation.getData().getCurrent().getPollution().getMainus());
+        cityIntent.putExtra(EXTRA_AQI_CN, clickedStation.getData().getCurrent().getPollution().getAqicn().toString());
+        cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_CN, clickedStation.getData().getCurrent().getPollution().getMaincn());
+        startActivity(cityIntent);
+    }
+
+    /*
+    * Time it took for Linear search vs. Binary search
+    * Linear: 102 ms
+    * Binary: 127 ms
+    * LINEAR SEARCH WINS!!!
+     */
 }

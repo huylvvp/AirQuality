@@ -22,6 +22,7 @@ import android.view.View;
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private CardView findCard;
     private CardView exploreCard;
     private CardView listCard;
     private CardView settingsCard;

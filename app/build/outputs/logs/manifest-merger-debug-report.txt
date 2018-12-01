@@ -104,13 +104,17 @@ ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:25:9-50
 	android:name
 		ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:25:19-47
 activity#com.kevinlu.airquality.CityActivity
-ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:26:9-27:20
+ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:26:9-59
 	android:name
 		ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:26:19-47
 activity#com.kevinlu.airquality.OnboardingActivity
-ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:28:9-78
+ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:27:9-56
 	android:name
-		ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:28:19-75
+		ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:27:19-53
+activity#com.kevinlu.airquality.FindActivity
+ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:28:9-59
+	android:name
+		ADDED from D:\AirQuality\app\src\main\AndroidManifest.xml:28:19-47
 uses-sdk
 INJECTED from D:\AirQuality\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AirQuality\app\src\main\AndroidManifest.xml

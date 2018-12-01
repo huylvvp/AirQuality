@@ -1496,6 +1496,10 @@
         "source": "C:\\Users\\649859\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\9ef3293c90bcddfec43f6a16f816ee60\\res\\layout-v21\\notification_template_custom_big.xml"
     },
     {
+        "merged": "D:\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_find.xml.flat",
+        "source": "D:\\AirQuality\\app\\src\\main\\res\\layout\\activity_find.xml"
+    },
+    {
         "merged": "D:\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "D:\\AirQuality\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },

@@ -23,9 +23,9 @@
         <activity android:name=".ExploreActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ListActivity" />
-        <activity android:name=".CityActivity" >
-        </activity>
-        <activity android:name="com.kevinlu.airquality.OnboardingActivity" />
+        <activity android:name=".CityActivity"></activity>
+        <activity android:name=".OnboardingActivity" />
+        <activity android:name=".FindActivity"></activity>
     </application>
 
 </manifest>

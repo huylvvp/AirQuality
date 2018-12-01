@@ -29,9 +29,9 @@
         <activity android:name="com.kevinlu.airquality.ExploreActivity" />
         <activity android:name="com.kevinlu.airquality.SettingsActivity" />
         <activity android:name="com.kevinlu.airquality.ListActivity" />
-        <activity android:name="com.kevinlu.airquality.CityActivity" >
-        </activity>
+        <activity android:name="com.kevinlu.airquality.CityActivity" />
         <activity android:name="com.kevinlu.airquality.OnboardingActivity" />
+        <activity android:name="com.kevinlu.airquality.FindActivity" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"

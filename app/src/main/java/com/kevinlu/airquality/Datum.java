@@ -28,5 +28,4 @@ public class Datum {
     public void setState(String state) {
         this.state = state;
     }
-
 }

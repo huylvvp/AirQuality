@@ -30,14 +30,14 @@
         <activity android:name="com.kevinlu.airquality.ExploreActivity" />
         <activity android:name="com.kevinlu.airquality.SettingsActivity" />
         <activity android:name="com.kevinlu.airquality.ListActivity" />
-        <activity android:name="com.kevinlu.airquality.CityActivity" >
-        </activity>
+        <activity android:name="com.kevinlu.airquality.CityActivity" />
         <activity android:name="com.kevinlu.airquality.OnboardingActivity" />
+        <activity android:name="com.kevinlu.airquality.FindActivity" />
 
-        <meta-data
-            android:name="android.arch.lifecycle.VERSION"
-            android:value="27.0.0-SNAPSHOT" />
-
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.kevinlu.airquality.com.squareup.picasso"
+            android:exported="false" />
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"
             android:authorities="com.kevinlu.airquality.com.android.tools.ir.server.InstantRunContentProvider"

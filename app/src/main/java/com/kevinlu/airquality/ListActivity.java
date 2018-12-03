@@ -28,7 +28,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * The MainActivity class makes use of the Station classes and
@@ -40,7 +39,7 @@ import java.util.List;
  *
  */
 
-public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, Adapter.OnItemClickListener {
+public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ListAdapter.OnItemClickListener {
     public static final String EXTRA_CITY_NAME = "cityName";
     public static final String EXTRA_COORDINATES = "coordinates";
     public static final String EXTRA_TIMESTAMP = "timestamp";
@@ -51,7 +50,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
 
     private static final String url = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
     private RecyclerView recyclerView;
-    private Adapter adapter;
+    private ListAdapter listAdapter;
     private FileOutputStream fileOutputStream;
 
     private ArrayList<Station> stationList;
@@ -127,13 +126,13 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //Initialize the adapter object so it can update the recyclerView
+        //Initialize the listAdapter object so it can update the recyclerView
         //with data from the ArrayList
-        adapter = new Adapter(this, stationList);
+        listAdapter = new ListAdapter(this, stationList);
 
-        //Set the recyclerView's adapter to the adapter object
-        recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(ListActivity.this);
+        //Set the recyclerView's listAdapter to the listAdapter object
+        recyclerView.setAdapter(listAdapter);
+        listAdapter.setOnItemClickListener(ListActivity.this);
 
         //Use the function loadRecyclerViewData to get data from the API
         loadRecyclerViewData();
@@ -259,7 +258,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                 Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
                 break;
         }
-        adapter.notifyDataSetChanged();
+        listAdapter.notifyDataSetChanged();
         return super.onOptionsItemSelected(item);
     }
 
@@ -292,10 +291,10 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                     String fileName = station.getData().getCity() + ".txt";
                     //Add the new Station object to the ArrayList of Station objects
                     //This is to create another entry in the RecyclerView
-                    //Tell the RecyclerView adapter that our data is updated
+                    //Tell the RecyclerView listAdapter that our data is updated
                     //because Station was just to the ArrayList
                     stationList.add(station);
-                    adapter.notifyDataSetChanged();
+                    listAdapter.notifyDataSetChanged();
                     //openFileOutput will throw a FileNotFoundException so
                     //it is surrounded in a try - catch block to handle it
                     try {
@@ -378,7 +377,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private void filter(@NotNull String text) {
         long startTime = System.currentTimeMillis();
         if (text.length() == 0) {
-            adapter.filterList(stationList);
+            listAdapter.filterList(stationList);
         } else {
             ArrayList<Station> filteredList = new ArrayList<>();
 
@@ -387,7 +386,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                     filteredList.add(item);
                 }
             }
-            adapter.filterList(filteredList);
+            listAdapter.filterList(filteredList);
         }
         long endTime = System.currentTimeMillis();
         Log.d("Binary Search time", (endTime - startTime) + "");
@@ -422,9 +421,18 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         }
         long endTime = System.currentTimeMillis();
         Log.d("Binary Search time", (endTime - startTime) + "");
-        adapter.filterList(filteredList);
+        listAdapter.filterList(filteredList);
     }
 
+    /**
+     * Overrides the onItemClick method specified in the
+     * setOnItemClickListener interface. This method grabs information
+     * from the RecyclerView item and gives it to the CityActivity which launches
+     * through the cityIntent object.
+     *
+     * @param position - an integer which defines which item
+     *                 in the RecyclerView has been clicked on
+     */
     @Override
     public void onItemClick(int position) {
         Intent cityIntent = new Intent(this, CityActivity.class);

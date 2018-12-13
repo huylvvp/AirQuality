@@ -29,4 +29,8 @@
     <color name="aqius_unhealthy">#f44336</color>
     <color name="aqius_veryunhealthy">#9c27b0</color>
     <color name="aqius_hazardous">#880e4f</color>
+
+    <color name="bg_row_background">#fa315b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
     </resources>

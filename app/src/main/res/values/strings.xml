@@ -9,4 +9,5 @@
     <string name="main_pollutant_cn">Main Pollutant (China): PM 2.5</string>
     <string name="coordinates">43.5890° N, 79.6441° W</string>
     <string name="unsplash_client_id">2ef4adbbc6aa68fb62acbf7170933cbc25526420aa6da426c16cb0c08ce5cffd</string>
+    <string name="favorite">Favorite</string>
 </resources>

@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="8dp">
     <!--android:background="@drawable/border"-->
-    <ImageView
-        android:id="@+id/listCityImage"
-        android:layout_width="105dp"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/ic_launcher" />
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/listItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_row_background">
+
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="@dimen/ic_delete"
+            android:layout_height="@dimen/ic_delete"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padd_10"
+            android:src="@drawable/ic_favorite_border_black_24dp">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/padd_10"
+            android:layout_toLeftOf="@id/delete_icon"
+            android:text="@string/favorite"
+            android:textColor="#ffffff"
+            android:textSize="13dp" />
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/listItemForeground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        android:background="@color/white"
+        android:padding="@dimen/padd_10">
+
+        <ImageView
+            android:id="@+id/listCityImage"
+            android:layout_width="@dimen/thumbnail"
+            android:layout_height="@dimen/thumbnail"
+            android:layout_marginRight="@dimen/activity_padding_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/textViewTitle"
@@ -64,5 +94,5 @@
             android:text="AQI RATING"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textStyle="normal" />
-    </LinearLayout>
-</LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

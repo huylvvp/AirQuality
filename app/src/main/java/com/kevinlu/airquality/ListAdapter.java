@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -172,11 +173,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public void addItem(Station station) {
         stationList.add(station);
+        // notify the item removed by position
+        // to perform recycler view delete animations
+        // NOTE: don't call notifyDataSetChanged()
         notifyItemInserted(stationList.size());
     }
 
     public void removeItem(int position) {
         stationList.remove(position);
+        // notify item added by position
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, stationList.size());
     }
@@ -187,6 +192,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
+        RelativeLayout listViewForeground, listViewBackground;
         //LinearLayout linearLayout;
 
         ViewHolder(View itemView) {
@@ -197,6 +203,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
             textViewRating = itemView.findViewById(R.id.textViewRating);
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            listViewForeground = itemView.findViewById(R.id.listItemForeground);
+            listViewBackground = itemView.findViewById(R.id.listItemBackground);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

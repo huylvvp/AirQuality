@@ -3,6 +3,7 @@ package com.kevinlu.airquality;
 //import statements
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -39,16 +40,16 @@ import java.util.Collections;
  *
  */
 
-public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ListAdapter.OnItemClickListener {
-    public static final String EXTRA_CITY_NAME = "cityName";
-    public static final String EXTRA_COORDINATES = "coordinates";
-    public static final String EXTRA_TIMESTAMP = "timestamp";
-    public static final String EXTRA_AQI_US = "aqiUS";
-    public static final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
-    public static final String EXTRA_AQI_CN = "aqiCN";
-    public static final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
+public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ListAdapter.OnItemClickListener, RecyclerItemTouchHelperListener {
+    public final String EXTRA_CITY_NAME = "cityName";
+    public final String EXTRA_COORDINATES = "coordinates";
+    public final String EXTRA_TIMESTAMP = "timestamp";
+    public final String EXTRA_AQI_US = "aqiUS";
+    public final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
+    public final String EXTRA_AQI_CN = "aqiCN";
+    public final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
 
-    private static final String url = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
+    private final String url = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
     private RecyclerView recyclerView;
     private ListAdapter listAdapter;
     private FileOutputStream fileOutputStream;
@@ -446,6 +447,34 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         cityIntent.putExtra(EXTRA_AQI_CN, clickedStation.getData().getCurrent().getPollution().getAqicn().toString());
         cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_CN, clickedStation.getData().getCurrent().getPollution().getMaincn());
         startActivity(cityIntent);
+    }
+
+    @Override
+    public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
+        if (viewHolder instanceof ListAdapter.ViewHolder) {
+            String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
+
+            //Create a backup of the deleted item in case user wants to undo delete
+            final Station deletedStation = stationList.get(viewHolder.getAdapterPosition());
+            final int deletedStationIndex = viewHolder.getAdapterPosition();
+
+            //Remove the item from RecyclerView
+            listAdapter.removeItem(deletedStationIndex);
+
+            Snackbar snackbar = Snackbar
+                    .make(coordinatorLayout, name + " removed from list!", Snackbar.LENGTH_LONG);
+            snackbar.setAction("UNDO", new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    // undo is selected, restore the deleted item
+                    listAdapter.addItem(deletedStation, deletedStationIndex);
+                }
+            });
+            snackbar.setActionTextColor(Color.YELLOW);
+            snackbar.show();
+
+        }
     }
 
     /*

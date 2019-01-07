@@ -61,7 +61,9 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
     }
 
     /**
-     * @param viewHolder
+     * Called when the ViewHolder swiped or dragged by the ItemTouchHelper is changed.
+     *
+     * @param viewHolder The ViewHolder which is being dragged by the user.
      * @param actionState
      */
     @Override

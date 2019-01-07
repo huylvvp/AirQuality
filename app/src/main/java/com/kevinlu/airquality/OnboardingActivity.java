@@ -27,20 +27,20 @@ public class OnboardingActivity extends AppIntro {
         sliderPage1.setDescColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
         sliderPage1.setDescription("Let's guide you through the app!");
         sliderPage1.setImageDrawable(R.drawable.circle_background_green);
-        sliderPage1.setBgColor(getResources().getColor(R.color.backgroundcolor));
+        sliderPage1.setBgColor(ContextCompat.getColor(this, R.color.backgroundcolor));
         addSlide(AppIntroFragment.newInstance(sliderPage1));
 
         SliderPage sliderPage2 = new SliderPage();
         sliderPage2.setTitle("Setup: Permissions");
         sliderPage2.setDescription("We need your help! Grant the app location and storage permissions.");
         sliderPage2.setImageDrawable(R.drawable.circle_background_yellow);
-        sliderPage2.setBgColor(getResources().getColor(R.color.backgroundcolor));
+        sliderPage2.setBgColor(ContextCompat.getColor(this, R.color.backgroundcolor));
         addSlide(AppIntroFragment.newInstance(sliderPage2));
 
         // OPTIONAL METHODS
         // Override bar/separator color.
-        setBarColor(getResources().getColor(R.color.colorPrimary));
-        setSeparatorColor(getResources().getColor(R.color.colorPrimaryLight));
+        setBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        setSeparatorColor(ContextCompat.getColor(this, R.color.colorPrimaryLight));
 
         // Hide Skip/Done button.
         showSkipButton(true);

@@ -1,5 +1,6 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mapbox="http://schemas.android.com/tools"
     style="@style/CardView.Light"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -56,17 +57,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/cityDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="10dp"
-                android:text="@string/city_description"
-                android:textColor="@color/black"
-                android:textSize="16dp" />
+            <!--<TextView-->
+                <!--android:id="@+id/cityDescription"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginLeft="20dp"-->
+                <!--android:layout_marginRight="20dp"-->
+                <!--android:layout_marginBottom="10dp"-->
+                <!--android:text="@string/city_description"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="16dp" />-->
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
@@ -138,7 +139,15 @@
                         android:textSize="16dp" />
                 </LinearLayout>
             </android.support.v7.widget.CardView>
-
+            <com.mapbox.mapboxsdk.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                mapbox:mapbox_cameraTargetLat="41.885"
+                mapbox:mapbox_cameraTargetLng="-87.679"
+                mapbox:mapbox_cameraTilt="60"
+                mapbox:mapbox_cameraZoom="12"
+                mapbox:mapbox_styleUrl="@string/mapbox_style_light" />
         </LinearLayout>
 
         <!--<android.support.v7.widget.CardView-->

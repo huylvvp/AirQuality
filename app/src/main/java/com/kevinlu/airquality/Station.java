@@ -15,6 +15,16 @@ public class Station {
     @Expose
     private Data data;
 
+    private boolean isFavourite;
+
+    public boolean isFavourite() {
+        return isFavourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        isFavourite = favourite;
+    }
+
     public String getStatus() {
         return status;
     }

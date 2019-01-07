@@ -1,11 +1,14 @@
 package com.kevinlu.airquality;
 
 import android.content.Context;
+import android.media.Image;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -179,11 +182,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         notifyItemInserted(stationList.size());
     }
 
+    public void restoreItem(Station station, int position) {
+        stationList.add(position, station);
+        // notify the item removed by position
+        // to perform recycler view delete animations
+        // NOTE: don't call notifyDataSetChanged()
+        notifyItemInserted(position);
+    }
+
     public void removeItem(int position) {
         stationList.remove(position);
         // notify item added by position
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, stationList.size());
+        //notifyItemRangeChanged(position, stationList.size());
     }
 
     /**
@@ -193,6 +204,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         ImageView imageView;
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
         RelativeLayout listViewForeground, listViewBackground;
+        ImageView favouriteCheckBox;
+
         //LinearLayout linearLayout;
 
         ViewHolder(View itemView) {
@@ -205,6 +218,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             listViewForeground = itemView.findViewById(R.id.listItemForeground);
             listViewBackground = itemView.findViewById(R.id.listItemBackground);
+            favouriteCheckBox = itemView.findViewById(R.id.button_favourite);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -217,6 +231,14 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     }
                 }
             });
+
+            favouriteCheckBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
         }
     }
 

@@ -88,12 +88,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.list_card:
-                //intent = new Intent(this, ListActivity.class);
-                intent = new Intent(this, FindActivity.class);
+                intent = new Intent(this, ListActivity.class);
+                //intent = new Intent(this, FindActivity.class);
                 startActivity(intent);
                 break;
             case R.id.settings_card:
-                intent = new Intent(this, SettingsActivity.class);
+                //intent = new Intent(this, SettingsActivity.class);
+                intent = new Intent(this, Main2Activity.class);
                 startActivity(intent);
                 break;
             case R.id.exit_card:

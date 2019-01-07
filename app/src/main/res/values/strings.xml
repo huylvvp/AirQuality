@@ -2,7 +2,9 @@
     <string name="app_name">AirQuality</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis euismod tellus, ac varius eros. Phasellus sem urna, vulputate quis velit vel, venenatis aliquet lacus. Etiam hendrerit justo sit amet magna vehicula sagittis. Integer quis elit non arcu dignissim dictum quis at ligula. Cras eu sollicitudin nisl. Quisque posuere tristique malesuada. Vestibulum vel sapien et purus ullamcorper egestas id sed est. Pellentesque imperdiet consectetur efficitur.</string>
     <string name="city_description">Guangzhou, known as Canton, is a modern, vigorous metropolis. It is the third largest city in China and is the political, economic, sci-tech, educational and cultural hub of southern China. It is located in south-central Guangdong Province, north of the Pearl River Delta.</string>
-    <string name="time_stamp">Timestamp: 2018-10-15T01:00:00.000Z</string>
+    <string name="time_stamp">2018-10-15T01:00:00.000Z</string>
+    <string name="aqi">AQI</string>
+    <string name="aqi_rating">AQI Rating</string>
     <string name="aqi_us">U.S. AQI: 110</string>
     <string name="main_pollutant_us">Main Pollutant (U.S.): PM 2.5</string>
     <string name="aqi_cn">China AQI: 60</string>
@@ -10,4 +12,11 @@
     <string name="coordinates">43.5890° N, 79.6441° W</string>
     <string name="unsplash_client_id">2ef4adbbc6aa68fb62acbf7170933cbc25526420aa6da426c16cb0c08ce5cffd</string>
     <string name="favorite">Favorite</string>
+    <string name="delete">Delete</string>
+    <string name="mapbox_token">pk.eyJ1Ijoia2V2aW5sIiwiYSI6ImNqbHF1Mjg0dDJrNWUzcHBhMTR2MnZzYm0ifQ.0SvrPQ1-FatZj34diqfN3Q</string>
+    <string name="city_name">City</string>
+    <string name="country_name">Country</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

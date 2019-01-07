@@ -3,13 +3,18 @@ package com.kevinlu.airquality;
 //import statements
 
 import android.content.Intent;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,35 +31,48 @@ import com.google.gson.GsonBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+
+import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
+import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 /**
  * The MainActivity class makes use of the Station classes and
  * is ran when the app starts.
  *
  * @author Kevin Lu <649859 @ pdsb.net>
- * @since JDK 1.8
  * @version 1.0
- *
+ * @since JDK 1.8
  */
 
 public class ListActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, ListAdapter.OnItemClickListener, RecyclerItemTouchHelperListener {
-    public final String EXTRA_CITY_NAME = "cityName";
-    public final String EXTRA_COORDINATES = "coordinates";
-    public final String EXTRA_TIMESTAMP = "timestamp";
-    public final String EXTRA_AQI_US = "aqiUS";
-    public final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
-    public final String EXTRA_AQI_CN = "aqiCN";
-    public final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
+    public static final String EXTRA_CITY_NAME = "cityName";
+    public static final String EXTRA_COORDINATES = "coordinates";
+    public static final String EXTRA_TIMESTAMP = "timestamp";
+    public static final String EXTRA_AQI_US = "aqiUS";
+    public static final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
+    public static final String EXTRA_AQI_CN = "aqiCN";
+    public static final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
+    public static final String EXTRA_STATION_JSON = "stationJSON";
 
-    private final String url = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
+    private final String urlMississauga = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
+    private final String url = "http://api.airvisual.com/v2/city?city={{YOUR_CITY}}&state={{YOUR_STATE}}&country={{YOUR_COUNTRY}}&key=ag85mSsqaj2Y24HvQ";
+
     private RecyclerView recyclerView;
     private ListAdapter listAdapter;
     private FileOutputStream fileOutputStream;
 
     private ArrayList<Station> stationList;
+    private ArrayList<String> spinnerList;
+
+    private CoordinatorLayout coordinatorLayout;
+    private Toolbar toolbar;
+
+    private FloatingActionButton floatingActionButton;
+    private SpinnerDialog spinnerDialog;
 
     @Override
     /*
@@ -68,9 +86,10 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         //super refers to the immediate parents' property
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        coordinatorLayout = findViewById(R.id.listCoordinatorLayout);
 
         //Initialize the toolbar object by referencing the toolbar layout
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         //Set the toolbar object as this activity's SupportActionBar
         setSupportActionBar(toolbar);
         //Add an OnClickListener to the navigation icon
@@ -86,6 +105,28 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         toolbar.setTitle("Air Quality List");
         //Set the navigation icon to a back arrow
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24dp);
+
+        //Initialize the Spinner
+        spinnerList = new ArrayList<>();
+        loadSpinnerListItems();
+        spinnerDialog = new SpinnerDialog(ListActivity.this, spinnerList, "Select city");
+        spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
+            @Override
+            public void onClick(String s, int i) {
+                Toast.makeText(ListActivity.this, s, Toast.LENGTH_SHORT).show();
+                loadSelectedDataToRecyclerView(s);
+                listAdapter.notifyDataSetChanged();
+            }
+        });
+
+        //Initialize the FloatingActionButton
+        floatingActionButton = findViewById(R.id.fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spinnerDialog.showSpinerDialog();
+            }
+        });
 
         //Initialize the ArrayList of Station objects
         stationList = new ArrayList<>();
@@ -121,11 +162,15 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
 
         stationList.add(beijing);
 
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
         //Initialize the recyclerView so it can display the data in the ArrayList
         recyclerView = findViewById(R.id.recyclerView);
         //Setting some properties of the recyclerView
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         //Initialize the listAdapter object so it can update the recyclerView
         //with data from the ArrayList
@@ -135,8 +180,13 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         recyclerView.setAdapter(listAdapter);
         listAdapter.setOnItemClickListener(ListActivity.this);
 
+        ItemTouchHelper.SimpleCallback ItemTouchHelperCallbackLeft = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
+        //ItemTouchHelper.SimpleCallback ItemTouchHelperCallbackRight = new RecyclerItemTouchHelper(0, ItemTouchHelper.RIGHT, this);
+        new ItemTouchHelper(ItemTouchHelperCallbackLeft).attachToRecyclerView(recyclerView);
+        //new ItemTouchHelper(ItemTouchHelperCallbackRight).attachToRecyclerView(recyclerView);
+
         //Use the function loadRecyclerViewData to get data from the API
-        loadRecyclerViewData();
+        //loadRecyclerViewData();
 
         //Write to the console to notify how many items are in the list
         Log.d("List Size", "" + stationList.size());
@@ -263,11 +313,100 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This function takes the selected Station and turns it
+     * into a request URL. This URL will be used to load data
+     * into the RecyclerView list.
+     * @param station - a String that the user selected from the Spinner
+     * @return - a String that contains the request URL
+     */
+    private String generateRequestURL(String station) {
+        String city = station.substring(0, station.indexOf(','));
+        String state = station.substring(station.indexOf(',')+2, station.lastIndexOf(','));
+        String country = station.substring(station.lastIndexOf(',')+2, station.length());
+
+        String newURL = url.replace("{{YOUR_CITY}}", city);
+        newURL = newURL.replace("{{YOUR_STATE}}", state);
+        newURL = newURL.replace("{{YOUR_COUNTRY}}", country);
+
+        return newURL;
+    }
+
+    /*
+     * This function gets data for the selected city from the API
+     * and adds it to the RecyclerView list
+     */
+    private void loadSelectedDataToRecyclerView(String selectedStation) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        fileOutputStream = null;
+        //Request a string response from the provided URL, create a new StringRequest object
+        /*
+         * @param response - This is the response (JSON file) from the API
+         */
+        //This is what will happen when there is an error during the response
+        /*
+         * @param error - This is the error that Volley encountered
+         */
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, generateRequestURL(selectedStation),
+                response -> {
+                    //Using Gson to turn JSON to Java object of Station
+                    //Create new GsonBuilder and Gson objects
+                    GsonBuilder gsonBuilder = new GsonBuilder();
+                    Gson gson = gsonBuilder.create();
+                    //Create a new Station object and use Gson to deserialize JSON data
+                    //into the Station object
+                    Station station = gson.fromJson(response, Station.class);
+                    //All file names are in the format of City.json
+                    String fileName = station.getData().getCity() + ".json";
+                    //Add the new Station object to the ArrayList of Station objects
+                    //This is to create another entry in the RecyclerView
+                    //Tell the RecyclerView listAdapter that our data is updated
+                    //because Station was just to the ArrayList
+                    stationList.add(station);
+                    listAdapter.notifyDataSetChanged();
+                    //openFileOutput will throw a FileNotFoundException so
+                    //it is surrounded in a try - catch block to handle it
+                    try {
+                        //First try to open a file output, it has parameters
+                        //of the file name and is set to MODE_PRIVATE so only
+                        //the application can access itz
+                        fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
+                        //Now the response from the API is written to the file
+                        fileOutputStream.write(response.getBytes());
+                        //gson.toJson(station, new FileWriter(fileName));
+                        //Send a Toast to the user informing them that the data
+                        //has been saved to a location on their device
+                        Toast.makeText(getApplicationContext(), "Station " + station.getData().getCity()
+                                + " saved to: " + getFilesDir() + "/" + fileName, Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        //Checking if fileOutputStream is not null
+                        //then it has successfully saved the file to
+                        //the file system of the device, again it is
+                        //surrounded in a try - catch block because
+                        //close() will throw a FileNotFoundException
+                        if (fileOutputStream != null) {
+                            try {
+                                fileOutputStream.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                    //Write the API response data to the log console
+                    Log.d("API RESPONSE", response);
+                }, error -> {
+            //Write the error from Volley to the log console
+            Log.d("VOLLEY ERROR", error.toString());
+        });
+        //Add the request to the RequestQueue
+        requestQueue.add(stringRequest);
+    }
+
     /*
      * This function gets data from the API and adds it to the RecyclerView list
-     * @return Nothing is being returned.
      */
-
     private void loadRecyclerViewData() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         fileOutputStream = null;
@@ -279,7 +418,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         /*
          * @param error - This is the error that Volley encountered
          */
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, urlMississauga,
                 response -> {
                     //Using Gson to turn JSON to Java object of Station
                     //Create new GsonBuilder and Gson objects
@@ -288,8 +427,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                     //Create a new Station object and use Gson to deserialize JSON data
                     //into the Station object
                     Station station = gson.fromJson(response, Station.class);
-                    //All file names are in the format of City.txt
-                    String fileName = station.getData().getCity() + ".txt";
+                    //All file names are in the format of City.json
+                    String fileName = station.getData().getCity() + ".json";
                     //Add the new Station object to the ArrayList of Station objects
                     //This is to create another entry in the RecyclerView
                     //Tell the RecyclerView listAdapter that our data is updated
@@ -305,6 +444,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
                         fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
                         //Now the response from the API is written to the file
                         fileOutputStream.write(response.getBytes());
+                        //gson.toJson(station, new FileWriter(fileName));
                         //Send a Toast to the user informing them that the data
                         //has been saved to a location on their device
                         Toast.makeText(getApplicationContext(), "Station " + station.getData().getCity()
@@ -446,41 +586,168 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_US, clickedStation.getData().getCurrent().getPollution().getMainus());
         cityIntent.putExtra(EXTRA_AQI_CN, clickedStation.getData().getCurrent().getPollution().getAqicn().toString());
         cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_CN, clickedStation.getData().getCurrent().getPollution().getMaincn());
+        cityIntent.putExtra(EXTRA_STATION_JSON, new Gson().toJson(clickedStation));
         startActivity(cityIntent);
     }
 
+    /**
+     * This onSwiped function overrides the method defined in the
+     * RecyclerItemTouchHelperListener interface. It removes a Station
+     * from the RecyclerView if it was swiped left/right. A Snackbar is
+     * also shown to notify the user of the change and allows the
+     * user to undo the removal if desired.
+     *
+     * @param viewHolder
+     * @param direction
+     * @param position
+     */
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
         if (viewHolder instanceof ListAdapter.ViewHolder) {
-            String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
+            if (direction == ItemTouchHelper.LEFT) {
+                String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
 
-            //Create a backup of the deleted item in case user wants to undo delete
-            final Station deletedStation = stationList.get(viewHolder.getAdapterPosition());
-            final int deletedStationIndex = viewHolder.getAdapterPosition();
+                //Create a backup of the deleted item in case user wants to undo delete
+                Station deletedStation = stationList.get(viewHolder.getAdapterPosition());
+                int deletedStationIndex = viewHolder.getAdapterPosition();
 
-            //Remove the item from RecyclerView
-            listAdapter.removeItem(deletedStationIndex);
+                //Remove the item from RecyclerView
+                listAdapter.removeItem(deletedStationIndex);
 
-            Snackbar snackbar = Snackbar
-                    .make(coordinatorLayout, name + " removed from list!", Snackbar.LENGTH_LONG);
-            snackbar.setAction("UNDO", new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, cityName + " removed from list!", Snackbar.LENGTH_LONG);
+                snackbar.setAction("UNDO", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
-                    // undo is selected, restore the deleted item
-                    listAdapter.addItem(deletedStation, deletedStationIndex);
-                }
-            });
-            snackbar.setActionTextColor(Color.YELLOW);
-            snackbar.show();
-
+                        // undo is selected, restore the deleted item
+                        listAdapter.restoreItem(deletedStation, position);
+                    }
+                });
+                snackbar.show();
+            }
+            if (direction == ItemTouchHelper.RIGHT) {
+                String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, cityName + " added to favourites!", Snackbar.LENGTH_LONG);
+                snackbar.setAction("UNDO", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Log.d("yeet", "big oof");
+                    }
+                });
+                snackbar.show();
+            }
         }
     }
 
+    private void loadSpinnerListItems() {
+        spinnerList.add("Athabasca Valley, Alberta, Canada");
+        spinnerList.add("Beaverlodge, Alberta, Canada");
+        spinnerList.add("Bruderheim, Alberta, Canada");
+        spinnerList.add("Calgary, Alberta, Canada");
+        spinnerList.add("Calmar, Alberta, Canada");
+        spinnerList.add("Caroline, Alberta, Canada");
+        spinnerList.add("Edmonton, Alberta, Canada");
+        spinnerList.add("Elk Island, Alberta, Canada");
+        spinnerList.add("Fort Chipewyan, Alberta, Canada");
+        spinnerList.add("Fort Mckay, Alberta, Canada");
+        spinnerList.add("Improvement District No. 24, Alberta, Canada");
+        spinnerList.add("Lethbridge, Alberta, Canada");
+        spinnerList.add("Red Deer, Alberta, Canada");
+
+        spinnerList.add("Abbotsford, British Columbia, Canada");
+        spinnerList.add("Burnaby, British Columbia, Canada");
+        spinnerList.add("Burns Lake, British Columbia, Canada");
+        spinnerList.add("Campbell River, British Columbia, Canada");
+        spinnerList.add("Chilliwack, British Columbia, Canada");
+        spinnerList.add("Coldstream, British Columbia, Canada");
+        spinnerList.add("Coquitlam, British Columbia, Canada");
+        spinnerList.add("Courtenay, British Columbia, Canada");
+        spinnerList.add("Crofton, British Columbia, Canada");
+        spinnerList.add("Duncan, British Columbia, Canada");
+        spinnerList.add("Fort St John, British Columbia, Canada");
+        spinnerList.add("Gibsons, British Columbia, Canada");
+        spinnerList.add("Golden, British Columbia, Canada");
+        spinnerList.add("Grand Forks, British Columbia, Canada");
+        spinnerList.add("Hope, British Columbia, Canada");
+        spinnerList.add("Houston, British Columbia, Canada");
+        spinnerList.add("Kamloops, British Columbia, Canada");
+        spinnerList.add("Langley, British Columbia, Canada");
+        spinnerList.add("Maple Ridge, British Columbia, Canada");
+        spinnerList.add("Nanaimo, British Columbia, Canada");
+        spinnerList.add("New Westminster, British Columbia, Canada");
+        spinnerList.add("North Vancouver, British Columbia, Canada");
+        spinnerList.add("Port Alberni, British Columbia, Canada");
+        spinnerList.add("Powell River, British Columbia, Canada");
+        spinnerList.add("Richmond, British Columbia, Canada");
+        spinnerList.add("Squamish, British Columbia, Canada");
+        spinnerList.add("Surrey East, British Columbia, Canada");
+        spinnerList.add("West Vancouver, British Columbia, Canada");
+
+        spinnerList.add("Brandon, Manitoba, Canada");
+        spinnerList.add("Flin Flon, Manitoba, Canada");
+
+        spinnerList.add("Bathurst, New Brunswick, Canada");
+        spinnerList.add("Forest Hills, New Brunswick, Canada");
+        spinnerList.add("Moncton, New Brunswick, Canada");
+        spinnerList.add("Saint John West, New Brunswick, Canada");
+        spinnerList.add("St Andrews, New Brunswick, Canada");
+
+        spinnerList.add("Corner Brook, Newfoundland and Labrador, Canada");
+        spinnerList.add("Goose Bay, Newfoundland and Labrador, Canada");
+        spinnerList.add("Grand Falls Windsor, Newfoundland and Labrador, Canada");
+        spinnerList.add("Labrador City, Newfoundland and Labrador, Canada");
+        spinnerList.add("Marystown, Newfoundland and Labrador, Canada");
+        spinnerList.add("Mount Pearl, Newfoundland and Labrador, Canada");
+        spinnerList.add("St. John's, Newfoundland and Labrador, Canada");
+
+        spinnerList.add("Snare Rapids, Northwest Territories, Canada");
+
+        spinnerList.add("Aylesford Mountain, Nova Scotia, Canada");
+        spinnerList.add("Kentville, Nova Scotia, Canada");
+        spinnerList.add("Lake Major, Nova Scotia, Canada");
+        spinnerList.add("Pictou, Nova Scotia, Canada");
+        spinnerList.add("Port Hawkesbury, Nova Scotia, Canada");
+        spinnerList.add("Sydney, Nova Scotia, Canada");
+
+        spinnerList.add("Algoma, Ontario, Canada");
+        spinnerList.add("Barrie, Ontario, Canada");
+        spinnerList.add("Belleville, Ontario, Canada");
+        spinnerList.add("Bonner Lake, Ontario, Canada");
+        spinnerList.add("Brampton, Ontario, Canada");
+        spinnerList.add("Brantford, Ontario, Canada");
+        spinnerList.add("Burlington, Ontario, Canada");
+        spinnerList.add("Chatham, Ontario, Canada");
+        spinnerList.add("Cornwall, Ontario, Canada");
+        spinnerList.add("Egbert, Ontario, Canada");
+        spinnerList.add("Guelph, Ontario, Canada");
+        spinnerList.add("Hamilton, Ontario, Canada");
+        spinnerList.add("Kingston, Ontario, Canada");
+        spinnerList.add("Kitchener, Ontario, Canada");
+        spinnerList.add("London, Ontario, Canada");
+        spinnerList.add("Mississauga, Ontario, Canada");
+        spinnerList.add("Newmarket, Ontario, Canada");
+        spinnerList.add("North Bay, Ontario, Canada");
+        spinnerList.add("Oakville, Ontario, Canada");
+        spinnerList.add("Oshawa, Ontario, Canada");
+        spinnerList.add("Ottawa, Ontario, Canada");
+        spinnerList.add("Parry Sound, Ontario, Canada");
+        spinnerList.add("Peterborough, Ontario, Canada");
+        spinnerList.add("Sarnia, Ontario, Canada");
+        spinnerList.add("Sault Ste Marie, Ontario, Canada");
+        spinnerList.add("St. Catharines, Ontario, Canada");
+        spinnerList.add("Sudbury, Ontario, Canada");
+        spinnerList.add("Thunder Bay, Ontario, Canada");
+        spinnerList.add("Tiverton, Ontario, Canada");
+        spinnerList.add("Toronto, Ontario, Canada");
+        spinnerList.add("Windsor, Ontario, Canada");
+
+        //TODO: add more stations.. maybe try to do this with a script?
+    }
+
     /*
-    * Time it took for Linear search vs. Binary search
-    * Linear: 102 ms
-    * Binary: 127 ms
-    * LINEAR SEARCH WINS!!!
+     * Time it took for Linear search vs. Binary search
+     * Linear: 102 ms
+     * Binary: 127 ms
+     * LINEAR SEARCH WINS!!!
      */
 }

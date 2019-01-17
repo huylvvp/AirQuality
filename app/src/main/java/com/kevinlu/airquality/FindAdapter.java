@@ -169,11 +169,11 @@ public class FindAdapter extends RecyclerView.Adapter<FindAdapter.ViewHolder> {
         ViewHolder(View itemView) {
             super(itemView);
 
-            findCityImage = itemView.findViewById(R.id.findCityImage);
-            findCityName = itemView.findViewById(R.id.findCityName);
-            findMainPollutant = itemView.findViewById(R.id.findMainPollutant);
-            findAQI = itemView.findViewById(R.id.findAQI);
-            findRating = itemView.findViewById(R.id.findRating);
+//            findCityImage = itemView.findViewById(R.id.findCityImage);
+//            findCityName = itemView.findViewById(R.id.findCityName);
+//            findMainPollutant = itemView.findViewById(R.id.findMainPollutant);
+//            findAQI = itemView.findViewById(R.id.findAQI);
+//            findRating = itemView.findViewById(R.id.findRating);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

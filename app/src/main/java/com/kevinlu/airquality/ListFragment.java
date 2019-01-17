@@ -79,22 +79,6 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
         stationList = new ArrayList<>();
 
-        //Adding a few test items to the stationList to test out the sort functions
-        Pollution guangzhouPollution = new Pollution();
-        guangzhouPollution.setAqius(110);
-        guangzhouPollution.setMainus("p2");
-        Current guangzhouCurrent = new Current();
-        guangzhouCurrent.setPollution(guangzhouPollution);
-        Data guangzhouData = new Data();
-        guangzhouData.setCurrent(guangzhouCurrent);
-        guangzhouData.setCountry("China");
-        guangzhouData.setState("Guangdong");
-        guangzhouData.setCity("Guangzhou");
-        Station guangzhou = new Station();
-        guangzhou.setData(guangzhouData);
-
-        stationList.add(guangzhou);
-
         //Initialize the toolbar object by referencing the toolbar layout
         toolbar = itemView.findViewById(R.id.toolbar);
         //Set the toolbar object as this activity's SupportActionBar
@@ -401,17 +385,6 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
                         // undo is selected, restore the deleted item
                         listAdapter.restoreItem(deletedStation, position);
-                    }
-                });
-                snackbar.show();
-            }
-            if (direction == ItemTouchHelper.RIGHT) {
-                String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
-                Snackbar snackbar = Snackbar.make(coordinatorLayout, cityName + " added to favourites!", Snackbar.LENGTH_LONG);
-                snackbar.setAction("UNDO", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d("yeet", "big oof");
                     }
                 });
                 snackbar.show();

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_aqiList">
+        <item>United States AQI</item>
+        <item>China AQI</item>
+    </string-array>
+    <string-array name="pref_aqiList_values">
+        <item>United States</item>
+        <item>China</item>
+    </string-array>
+</resources>

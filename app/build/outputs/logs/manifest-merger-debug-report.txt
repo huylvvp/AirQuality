@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\2de6312d6cd37780e77eb3d59ca28c4d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\c13f7cc42ea6196b4bad749d8550e28f\AndroidManifest.xml:2:1-13:12
 MERGED from [com.kc.androidunsplash:androidunsplash:0.2.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\androidunsplash-0.2.1.aar\91816df61cef0a69d0dd27b7367c6abe\AndroidManifest.xml:2:1-19:12
@@ -33,22 +33,22 @@ MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\kevin\.gradle\caches
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\9b181830a8b4f0459bf0798572f0e858\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\6966a862d64cda5a65fe4e8629e0934a\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\31e3d42c8804261193878949a4cac3b8\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
 	package
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:4:5-37
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-28:12
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:11-69
@@ -71,7 +71,7 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.0] C:\Users\kevin\.gra
 	android:name
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:8:22-76
 application
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:10:5-30:19
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:10:5-26:19
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\c13f7cc42ea6196b4bad749d8550e28f\AndroidManifest.xml:11:5-47
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\c13f7cc42ea6196b4bad749d8550e28f\AndroidManifest.xml:11:5-47
 MERGED from [com.kc.androidunsplash:androidunsplash:0.2.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\androidunsplash-0.2.1.aar\91816df61cef0a69d0dd27b7367c6abe\AndroidManifest.xml:13:5-17:19
@@ -114,30 +114,14 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:21:27-74
-activity#com.kevinlu.airquality.ExploreActivity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:24:9-53
-	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:24:19-50
-activity#com.kevinlu.airquality.SettingsActivity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:25:9-54
-	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:25:19-51
 activity#com.kevinlu.airquality.ListActivity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:26:9-50
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:24:9-50
 	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:26:19-47
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.kevinlu.airquality.CityActivity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:27:9-50
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:25:9-50
 	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:27:19-47
-activity#com.kevinlu.airquality.OnboardingActivity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:28:9-56
-	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:28:19-53
-activity#com.kevinlu.airquality.Main2Activity
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:29:9-60
-	android:name
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:29:19-48
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:25:19-47
 uses-sdk
 INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml

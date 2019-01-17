@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Units"
+        android:key="units_category" >
+
+    <ListPreference
+        android:title="Air Quality Index"
+        android:key="aqi_setting"
+        android:entries="@array/pref_aqiList"
+        android:entryValues="@array/pref_aqiList_values"
+        android:defaultValue="@string/pref_aqiList_default_value"
+        android:summary="Choose your preferred system of measurement" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

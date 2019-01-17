@@ -52,7 +52,7 @@ public class CurrentAirQualityFragment extends Fragment {
     }
 
     public CurrentAirQualityFragment() {
-        // Required empty public constructor
+        // Empty constructor
     }
 
 

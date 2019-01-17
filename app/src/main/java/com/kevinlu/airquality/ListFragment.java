@@ -3,13 +3,10 @@ package com.kevinlu.airquality;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
@@ -36,7 +33,6 @@ import com.google.gson.GsonBuilder;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -396,7 +392,6 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         spinnerList.add("Athabasca Valley, Alberta, Canada");
         spinnerList.add("Beaverlodge, Alberta, Canada");
         spinnerList.add("Bruderheim, Alberta, Canada");
-        spinnerList.add("Calgary, Alberta, Canada");
         spinnerList.add("Calmar, Alberta, Canada");
         spinnerList.add("Caroline, Alberta, Canada");
         spinnerList.add("Edmonton, Alberta, Canada");

@@ -28,9 +28,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_list_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\kevin" />
+                            <entry key="outputName" value="ic_face_very_unhealthy" />
+                            <entry key="sourceFile" value="C:\Users\kevin\Desktop\ICS4U0\AQ_Pics\ic_face_very_unhealthy.svg" />
                           </map>
                         </option>
                       </PersistentState>

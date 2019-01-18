@@ -85,13 +85,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         //Create a String for the location of the station (City, Province, Country)
         String stationLocation = station.getData().getCity() + ", " + station.getData().getState() + ", " + station.getData().getCountry();
+        //Setting the texts and images based on the AQI
         holder.textViewTitle.setText(stationLocation);
-//        List<Double> coordinates = station.getData().getLocation().getCoordinates();
-//        String listString = coordinates.stream().map(Object::toString)
-//                .collect(Collectors.joining(", "));
-//        holder.textViewShortDesc.setText(listString);
         holder.textViewShortDesc.setText(decodePollutant(station.getData().getCurrent().getPollution().getMainus()));
         int aqius = station.getData().getCurrent().getPollution().getAqius();
+        setIconAQIUS(holder, aqius);
         holder.textViewRating.setText(aqius + "");
         setColorAQIUS(holder, aqius);
         holder.textViewPrice.setText(rankAQIUS(aqius));
@@ -166,6 +164,29 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     /**
+     * This function sets the icon corresponding to the AQI
+     * @param holder - A ViewHolder object
+     * @param aqius - This is the air quality index by U.S. EPA standards
+     */
+    private void setIconAQIUS(ViewHolder holder, int aqius) {
+        if (aqius >= 0 && aqius <= 50) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_good));
+        } else if (aqius >= 51 && aqius <= 100) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_moderate));
+        } else if (aqius >= 101 && aqius <= 150) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_unhealthy_for_sensitive_groups));
+        } else if (aqius >= 151 && aqius <= 200) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_unhealthy));
+        } else if (aqius >= 201 && aqius <= 300) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_very_unhealthy));
+        } else if (aqius >= 301) {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_face_hazardous));
+        } else {
+            holder.imageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_map_marker_error));
+        }
+    }
+
+    /**
      * This method returns the size of the ArrayList
      * @return size of ArrayList, an Integer
      */
@@ -204,7 +225,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         ImageView imageView;
         TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
         RelativeLayout listViewForeground, listViewBackground;
-        ImageView favouriteCheckBox;
 
         //LinearLayout linearLayout;
 
@@ -218,7 +238,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             textViewPrice = itemView.findViewById(R.id.textViewPrice);
             listViewForeground = itemView.findViewById(R.id.listItemForeground);
             listViewBackground = itemView.findViewById(R.id.listItemBackground);
-            favouriteCheckBox = itemView.findViewById(R.id.button_favourite);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -231,14 +250,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                     }
                 }
             });
-
-            favouriteCheckBox.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            });
-
         }
     }
 

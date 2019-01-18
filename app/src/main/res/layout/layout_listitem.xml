@@ -14,26 +14,6 @@
         android:layout_height="match_parent"
         android:background="@color/bg_row_background">
 
-        <!--<ImageView-->
-            <!--android:id="@+id/favourite_icon"-->
-            <!--android:layout_width="@dimen/ic_delete"-->
-            <!--android:layout_height="@dimen/ic_delete"-->
-            <!--android:layout_alignParentLeft="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginLeft="@dimen/padd_16"-->
-            <!--android:src="@drawable/ic_favorite_border_black_24dp">-->
-        <!--</ImageView>-->
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginRight="@dimen/padd_16"-->
-            <!--android:layout_toRightOf="@id/favourite_icon"-->
-            <!--android:text="@string/favorite"-->
-            <!--android:textColor="#ffffff"-->
-            <!--android:textSize="16dp" />-->
-
         <ImageView
             android:id="@+id/delete_icon"
             android:layout_width="@dimen/ic_delete"
@@ -114,15 +94,5 @@
             android:text="AQI RATING"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
             android:textStyle="normal" />
-
-        <ImageView
-            android:id="@+id/button_favourite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/padd_16"
-            android:src="@drawable/ic_favorite_border_black_24dp">
-        </ImageView>
     </RelativeLayout>
 </FrameLayout>

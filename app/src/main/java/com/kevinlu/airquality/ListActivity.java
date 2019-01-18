@@ -59,7 +59,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     public static final String EXTRA_STATION_JSON = "stationJSON";
 
     private final String urlMississauga = "http://api.airvisual.com/v2/city?city=Mississauga&state=Ontario&country=Canada&key=ag85mSsqaj2Y24HvQ";
-    private final String url = "http://api.airvisual.com/v2/city?city={{YOUR_CITY}}&state={{YOUR_STATE}}&country={{YOUR_COUNTRY}}&key=ag85mSsqaj2Y24HvQ";
+    private final String url = "http://api.airvisual.com/v2/city?city={{YOUR_CITY}}&state={{YOUR_STATE}}&country={{YOUR_COUNTRY}}&key=5zbAzdPBu2RftKbus";
+    //private final String url = "http://api.airvisual.com/v2/city?city={{YOUR_CITY}}&state={{YOUR_STATE}}&country={{YOUR_COUNTRY}}&key=ag85mSsqaj2Y24HvQ";
 
     private RecyclerView recyclerView;
     private ListAdapter listAdapter;

@@ -38,7 +38,8 @@ import java.util.Locale;
  */
 public class CurrentAirQualityFragment extends Fragment {
 
-    private final String url = "http://api.airvisual.com/v2/nearest_city?key=ag85mSsqaj2Y24HvQ";
+    private final String url = "http://api.airvisual.com/v2/nearest_city?key=5zbAzdPBu2RftKbus";
+    //private final String url = "http://api.airvisual.com/v2/nearest_city?key=ag85mSsqaj2Y24HvQ";
 
     ImageView airQualityPicture;
     TextView cityName, countryName, cityTimeStamp, cityAQI, cityAQIRating;
@@ -140,28 +141,28 @@ public class CurrentAirQualityFragment extends Fragment {
         //Also changes the status bar color if the device has
         //Android Lollipop or above
 
-        if (hour >= 20 && hour < 5) {
+        if (hour >= 20 || hour < 5) {
             currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_night));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#041b20"));
             }
-        } else if (hour >= 5 && hour < 7) {
+        } else if (hour >= 5 || hour < 7) {
             currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunrise));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#060f18"));
             }
-        } else if (hour >= 7 && hour < 17) {
+        } else if (hour >= 7 || hour < 17) {
             currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunny));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Window window = getActivity().getWindow();
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
                 window.setStatusBarColor(Color.parseColor("#08253b"));
             }
-        } else {
+        } else if (hour >= 17 || hour < 20) {
             currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunset));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Window window = getActivity().getWindow();
@@ -170,10 +171,16 @@ public class CurrentAirQualityFragment extends Fragment {
             }
         }
 
+        //Display the information after it's been loaded
+        //Hide the progress bar and show the info.
         currentPanel.setVisibility(View.VISIBLE);
         currentProgressBar.setVisibility(View.GONE);
     }
 
+    /**
+     * @param timestamp - a String of ISO-8601 compliant timestamp
+     * @return - a String of the formatted date in words
+     */
     private String decodeTimestamp(String timestamp) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, MMMM d", Locale.ENGLISH);

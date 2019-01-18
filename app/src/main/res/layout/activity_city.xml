@@ -127,9 +127,32 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:layout_marginLeft="8dp"
-                        android:text="The air quality is very poor!"
+                        android:text="The air quality is good!"
                         android:textColor="@color/black"
                         android:textSize="32dp" />
+
+                    <TextView
+                        android:id="@+id/airquality_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="Air quality is considered satisfactory, and air pollution poses little or no risk."
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/airquality_suggestion"
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:autoLink="web"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="https://airnow.gov/index.cfm?action=aqibasics.pmhilevels"
+                        android:textColor="@color/black"
+                        android:textSize="16dp" />
+
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>

@@ -555,13 +555,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         Station clickedStation = stationList.get(position);
         Gson gson = new Gson();
 
-        cityIntent.putExtra(EXTRA_CITY_NAME, clickedStation.getData().getCity());
         cityIntent.putExtra(EXTRA_COORDINATES, clickedStation.getData().getLocation().getCoordinates().toString());
-        cityIntent.putExtra(EXTRA_TIMESTAMP, clickedStation.getData().getCurrent().getPollution().getTs());
-        cityIntent.putExtra(EXTRA_AQI_US, clickedStation.getData().getCurrent().getPollution().getAqius().toString());
-        cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_US, clickedStation.getData().getCurrent().getPollution().getMainus());
-        cityIntent.putExtra(EXTRA_AQI_CN, clickedStation.getData().getCurrent().getPollution().getAqicn().toString());
-        cityIntent.putExtra(EXTRA_MAIN_POLLUTANT_CN, clickedStation.getData().getCurrent().getPollution().getMaincn());
         cityIntent.putExtra(EXTRA_STATION_JSON, gson.toJson(clickedStation));
         startActivity(cityIntent);
     }

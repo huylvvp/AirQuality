@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,14 +27,17 @@ import static com.kevinlu.airquality.ListFragment.EXTRA_STATION_JSON;
  * on the selected Station object.
  *
  * @author Kevin Lu <649859 @ pdsb.net>
- * @since JDK 1.8
  * @version 1.0
- *
+ * @since JDK 1.8
  */
 public class CityActivity extends AppCompatActivity {
 
+    private TextView textViewAirQualityComment;
+    private TextView textViewAirQualitySuggestion;
+
     /**
      * Called when the activity is starting.
+     *
      * @param savedInstanceState - a Bundle, if the activity is being
      *                           re-initialized after previously being
      *                           shut down then this Bundle contains
@@ -47,6 +51,9 @@ public class CityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_city);
 
         Gson gson = new Gson();
+
+        //Create an Intent object to get details on which
+        //Station was clicked.
 
         Intent intent = getIntent();
 
@@ -69,6 +76,9 @@ public class CityActivity extends AppCompatActivity {
         TextView textViewMainPollutantUS = findViewById(R.id.cityMainPollutantUS);
         TextView textViewAQICN = findViewById(R.id.cityAQICN);
         TextView textViewMainPollutantCN = findViewById(R.id.cityMainPollutantCN);
+        TextView textViewAirQualityWarning = findViewById(R.id.airquality_warning);
+        textViewAirQualityComment = findViewById(R.id.airquality_comment);
+        textViewAirQualitySuggestion = findViewById(R.id.airquality_suggestion);
 
         Toolbar toolbar = findViewById(R.id.cityToolbar);
         setSupportActionBar(toolbar);
@@ -82,14 +92,66 @@ public class CityActivity extends AppCompatActivity {
         textViewMainPollutantUS.setText("U.S. Main Pollutant: " + decodePollutant(mainPollutantUS));
         textViewAQICN.setText("China AQI: " + aqiCN);
         textViewMainPollutantCN.setText("China Main Pollutant: " + decodePollutant(mainPollutantCN));
+        textViewAirQualityWarning.setText("The air quality is " + rankAQIUS(Integer.valueOf(aqiUS)) + "!");
+        setAirQualityComment(Integer.valueOf(aqiUS));
 
         loadHeaderImageFromUnsplash(countryName, imageView);
     }
 
+    private void setAirQualityComment(int aqius) {
+        if (aqius >= 0 && aqius <= 50) {
+            textViewAirQualityComment.setText("Air quality is considered satisfactory, and air pollution poses little or no risk.");
+        } else if (aqius >= 51 && aqius <= 100) {
+            textViewAirQualityComment.setText("Air quality is acceptable; however, for some pollutants there may be a moderate" +
+                    " health concern for a very small number of people. For example, people who are unusually sensitive to ozone " +
+                    "may experience respiratory symptoms.");
+        } else if (aqius >= 101 && aqius <= 150) {
+            textViewAirQualityComment.setText("Although general public is not likely to be affected at this AQI range, " +
+                    "people with lung disease, older adults and children are at a greater risk from exposure to ozone, " +
+                    "whereas persons with heart and lung disease, older adults and children are at greater risk from the " +
+                    "presence of particles in the air.");
+        } else if (aqius >= 151 && aqius <= 200) {
+            textViewAirQualityComment.setText("Everyone may begin to experience some adverse health effects, and members of " +
+                    "the sensitive groups may experience more serious effects.");
+        } else if (aqius >= 201 && aqius <= 300) {
+            textViewAirQualityComment.setText("This would trigger a health alert signifying that everyone may experience more serious health effects.");
+        } else if (aqius >= 301) {
+            textViewAirQualityComment.setText("This would trigger a health warnings of emergency conditions. " +
+                    "The entire population is more likely to be affected. Please visit the link below for assistance!");
+            textViewAirQualitySuggestion.setVisibility(View.VISIBLE);
+        } else {
+            textViewAirQualityComment.setText("The air quality cannot be determined.");
+        }
+    }
+
+    /**
+     * This method converts a numerical AQI value to its severity ranking in words
+     * @param aqius - This is the air quality index by U.S. EPA standards
+     * @return the rank of the air quality index, a String
+     */
+    private String rankAQIUS(int aqius) {
+        if (aqius >= 0 && aqius <= 50) {
+            return "good";
+        } else if (aqius >= 51 && aqius <= 100) {
+            return "moderate";
+        } else if (aqius >= 101 && aqius <= 150) {
+            return "unhealthy for sensitive groups";
+        } else if (aqius >= 151 && aqius <= 200) {
+            return "unhealthy";
+        } else if (aqius >= 201 && aqius <= 300) {
+            return "very unhealthy";
+        } else if (aqius >= 301) {
+            return "hazardous";
+        } else {
+            return "ERROR";
+        }
+    }
+
     /**
      * This method navigates back to the previous activity.
+     *
      * @return - true, when the back button on the toolbar
-     *           is pressed.
+     * is pressed.
      */
     @Override
     public boolean onSupportNavigateUp() {
@@ -100,7 +162,8 @@ public class CityActivity extends AppCompatActivity {
     /**
      * This function uses an Unsplash library to load a header image
      * corresponding to the city of interest.
-     * @param cityName - a String, the name of the city.
+     *
+     * @param cityName  - a String, the name of the city.
      * @param imageView - the ImageView that should hold this image.
      */
     private void loadHeaderImageFromUnsplash(String cityName, ImageView imageView) {
@@ -133,18 +196,26 @@ public class CityActivity extends AppCompatActivity {
 
     /**
      * This method converts short form of pollutant names to its full form
+     *
      * @param mainPollutant - This is a String of the short form of the pollutant name
      * @return Full form of the short form pollutant
      */
     private String decodePollutant(String mainPollutant) {
         switch (mainPollutant) {
-            case "p2": return "PM 2.5";
-            case "p1": return "PM 10";
-            case "o3": return "Ozone";
-            case "n2": return "Nitrogen Dioxide";
-            case "s2": return "Sulfur Dioxide";
-            case "co": return "Carbon Monoxide";
-            default: return "Unknown Pollutant";
+            case "p2":
+                return "PM 2.5";
+            case "p1":
+                return "PM 10";
+            case "o3":
+                return "Ozone";
+            case "n2":
+                return "Nitrogen Dioxide";
+            case "s2":
+                return "Sulfur Dioxide";
+            case "co":
+                return "Carbon Monoxide";
+            default:
+                return "Unknown Pollutant";
         }
     }
 }

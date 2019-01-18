@@ -1,16 +1,23 @@
 package com.kevinlu.airquality;
 
 
+import android.graphics.Color;
+import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +28,8 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 
 
@@ -41,6 +45,7 @@ public class CurrentAirQualityFragment extends Fragment {
     LinearLayout currentPanel;
     ProgressBar currentProgressBar;
     SwipeRefreshLayout pullToRefresh;
+    RelativeLayout currentLayout;
 
     static CurrentAirQualityFragment instance;
 
@@ -62,9 +67,11 @@ public class CurrentAirQualityFragment extends Fragment {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_current_air_quality, container, false);
 
-        airQualityPicture = itemView.findViewById(R.id.airquality_picture);
+        currentLayout = itemView.findViewById(R.id.current_bg);
+
+        //airQualityPicture = itemView.findViewById(R.id.airquality_picture);
         cityName = itemView.findViewById(R.id.cityName);
-        countryName = itemView.findViewById(R.id.countryName);
+        //countryName = itemView.findViewById(R.id.countryName);
         cityTimeStamp = itemView.findViewById(R.id.cityTimestamp);
         cityAQI = itemView.findViewById(R.id.cityAQI);
         cityAQIRating = itemView.findViewById(R.id.cityAQIRating);
@@ -76,8 +83,8 @@ public class CurrentAirQualityFragment extends Fragment {
         pullToRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(getContext(), "refreshed eh", Toast.LENGTH_SHORT).show();
-                //getCurrentAirQualityData();
+                Toast.makeText(getContext(), "Successfully refreshed!", Toast.LENGTH_SHORT).show();
+                getCurrentAirQualityData();
                 pullToRefresh.setRefreshing(false);
             }
         });
@@ -121,10 +128,47 @@ public class CurrentAirQualityFragment extends Fragment {
 
     private void loadCurrentData(Station station) {
         cityName.setText(station.getData().getCity());
-        countryName.setText(station.getData().getCountry());
         cityTimeStamp.setText(decodeTimestamp(station.getData().getCurrent().getPollution().getTs()));
         cityAQI.setText(station.getData().getCurrent().getPollution().getAqius().toString());
         cityAQIRating.setText(rankAQIUS(station.getData().getCurrent().getPollution().getAqius()));
+
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+        Log.d("Time", "24 hours: " + hour);
+
+        //Changing the background image depending on the time of day
+        //Also changes the status bar color if the device has
+        //Android Lollipop or above
+
+        if (hour >= 20 && hour < 5) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_night));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#041b20"));
+            }
+        } else if (hour >= 5 && hour < 7) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunrise));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#060f18"));
+            }
+        } else if (hour >= 7 && hour < 17) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunny));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#08253b"));
+            }
+        } else {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunset));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getActivity().getWindow();
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                window.setStatusBarColor(Color.parseColor("#20244c"));
+            }
+        }
 
         currentPanel.setVisibility(View.VISIBLE);
         currentProgressBar.setVisibility(View.GONE);

@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    tools:context=".CurrentAirQualityFragment">
+    tools:context=".CurrentAirQualityFragment"
+    android:id="@+id/current_bg" >
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/current_swipeRefresh"
@@ -17,11 +18,23 @@
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        
+
+        <TextView
+            android:id="@+id/cityAQIRating"
+            android:paddingTop="64dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="52sp"
+            android:text="@string/aqi_rating"
+            android:textStyle="normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/cityName"
+            android:paddingTop="16dp"
             android:gravity="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             android:text="@string/city_name"
@@ -29,49 +42,25 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/countryName"
-            android:gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            android:text="@string/country_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/cityTimestamp"
-            android:gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            android:text="@string/time_stamp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:id="@+id/airquality_picture"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground" />
-
-        <TextView
             android:id="@+id/cityAQI"
+            android:paddingTop="16dp"
             android:gravity="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:textSize="128sp"
             android:text="@string/aqi"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/cityAQIRating"
+            android:id="@+id/cityTimestamp"
+            android:paddingTop="16dp"
             android:gravity="center"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="24sp"
-            android:text="@string/aqi_rating"
-            android:textStyle="bold"
+            android:text="@string/time_stamp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
     </LinearLayout>
 
 </android.support.v4.widget.SwipeRefreshLayout>

@@ -530,7 +530,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
             listAdapter.filterList(filteredList);
         }
         long endTime = System.currentTimeMillis();
-        Log.d("Binary Search time", (endTime - startTime) + "");
+        Log.d("Linear Search time", (endTime - startTime) + "");
     }
 
     /**

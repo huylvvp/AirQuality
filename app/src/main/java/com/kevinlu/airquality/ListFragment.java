@@ -26,8 +26,12 @@ import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -38,7 +42,6 @@ import java.util.Collections;
 
 import in.galaxyofandroid.spinerdialog.OnSpinerItemClick;
 import in.galaxyofandroid.spinerdialog.SpinnerDialog;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -113,7 +116,28 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         //Set the recyclerView's listAdapter to the listAdapter object
         recyclerView.setAdapter(listAdapter);
 
+        if (stationList.size() == 0) {
+            loadDataFromFirebase();
+        }
+
         return itemView;
+    }
+
+    private void uploadDataToFirebase(Station station) {
+        //Initialize the Firebase database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //Set the database reference to the stations list in Firebase
+        DatabaseReference stations = database.getReference("stations");
+        //Set an id for each Station object added to Firebase
+        String id = stations.push().getKey();
+        //Add the object to Firebase
+        stations.child(id).setValue(station);
+    }
+
+    private void loadDataFromFirebase() {
+        //Initialize the Firebase database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
     }
 
     @Override
@@ -190,7 +214,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
             listAdapter.filterList(filteredList);
         }
         long endTime = System.currentTimeMillis();
-        Log.d("Binary Search time", (endTime - startTime) + "");
+        Log.d("Linear Search time", (endTime - startTime) + "");
     }
 
     /**
@@ -275,57 +299,33 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
          * @param error - This is the error that Volley encountered
          */
         StringRequest stringRequest = new StringRequest(Request.Method.GET, generateRequestURL(selectedStation),
-                response -> {
-                    //Using Gson to turn JSON to Java object of Station
-                    //Create new GsonBuilder and Gson objects
-                    GsonBuilder gsonBuilder = new GsonBuilder();
-                    Gson gson = gsonBuilder.create();
-                    //Create a new Station object and use Gson to deserialize JSON data
-                    //into the Station object
-                    Station station = gson.fromJson(response, Station.class);
-                    //All file names are in the format of City.json
-                    String fileName = station.getData().getCity() + ".json";
-                    //Add the new Station object to the ArrayList of Station objects
-                    //This is to create another entry in the RecyclerView
-                    //Tell the RecyclerView listAdapter that our data is updated
-                    //because Station was just to the ArrayList
-                    stationList.add(station);
-                    listAdapter.notifyDataSetChanged();
-                    //openFileOutput will throw a FileNotFoundException so
-                    //it is surrounded in a try - catch block to handle it
-//                    try {
-//                        //First try to open a file output, it has parameters
-//                        //of the file name and is set to MODE_PRIVATE so only
-//                        //the application can access itz
-//                        //fileOutputStream = openFileOutput(fileName, MODE_PRIVATE);
-//                        //Now the response from the API is written to the file
-//                        //fileOutputStream.write(response.getBytes());
-//                        //gson.toJson(station, new FileWriter(fileName));
-//                        //Send a Toast to the user informing them that the data
-//                        //has been saved to a location on their device
-////                        Toast.makeText(getActivity(), "Station " + station.getData().getCity()
-////                                + " saved to: " + getFilesDir() + "/" + fileName, Toast.LENGTH_LONG).show();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    } finally {
-//                        //Checking if fileOutputStream is not null
-//                        //then it has successfully saved the file to
-//                        //the file system of the device, again it is
-//                        //surrounded in a try - catch block because
-//                        //close() will throw a FileNotFoundException
-////                        if (fileOutputStream != null) {
-////                            try {
-////                                fileOutputStream.close();
-////                            } catch (IOException e) {
-////                                e.printStackTrace();
-////                            }
-////                        }
-//                    }
-                    //Write the API response data to the log console
-                    Log.d("API RESPONSE", response);
-                }, error -> {
-            //Write the error from Volley to the log console
-            Log.d("VOLLEY ERROR", error.toString());
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        //Using Gson to turn JSON to Java object of Station
+                        //Create new GsonBuilder and Gson objects
+                        GsonBuilder gsonBuilder = new GsonBuilder();
+                        Gson gson = gsonBuilder.create();
+                        //Create a new Station object and use Gson to deserialize JSON data
+                        //into the Station object
+                        Station station = gson.fromJson(response, Station.class);
+                        //Add the new Station object to the ArrayList of Station objects
+                        //This is to create another entry in the RecyclerView
+                        //Tell the RecyclerView listAdapter that our data is updated
+                        //because Station was just to the ArrayList
+                        stationList.add(station);
+                        listAdapter.notifyDataSetChanged();
+                        //Add the new Station object to Firebase
+                        uploadDataToFirebase(station);
+                        //Write the API response data to the log console
+                        Log.d("API RESPONSE", response);
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //Write the error from Volley to the log console
+                Log.d("VOLLEY ERROR", error.toString());
+            }
         });
         //Add the request to the RequestQueue
         requestQueue.add(stringRequest);
@@ -335,13 +335,13 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
      * This function takes the selected Station and turns it
      * into a request URL. This URL will be used to load data
      * into the RecyclerView list.
-     * @param station - a String that the user selected from the Spinner
+     * @param stationName - a String that the user selected from the Spinner
      * @return - a String that contains the request URL
      */
-    private String generateRequestURL(String station) {
-        String city = station.substring(0, station.indexOf(','));
-        String state = station.substring(station.indexOf(',')+2, station.lastIndexOf(','));
-        String country = station.substring(station.lastIndexOf(',')+2, station.length());
+    private String generateRequestURL(String stationName) {
+        String city = stationName.substring(0, stationName.indexOf(','));
+        String state = stationName.substring(stationName.indexOf(',')+2, stationName.lastIndexOf(','));
+        String country = stationName.substring(stationName.lastIndexOf(',')+2, stationName.length());
 
         String newURL = url.replace("{{YOUR_CITY}}", city);
         newURL = newURL.replace("{{YOUR_STATE}}", state);

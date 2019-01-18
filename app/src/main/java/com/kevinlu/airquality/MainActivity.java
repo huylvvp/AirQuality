@@ -1,7 +1,5 @@
 package com.kevinlu.airquality;
 
-import android.content.Intent;
-import android.preference.PreferenceFragment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        fragments = new Fragment[3];
+        fragments = new Fragment[2];
         fragments[0] = new CurrentAirQualityFragment();
         fragments[1] = new ListFragment();
 
@@ -33,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
-            PreferenceFragment settingsFragment = null;
             switch (item.getItemId()) {
                 case R.id.nav_home:
                     selectedFragment = fragments[0];

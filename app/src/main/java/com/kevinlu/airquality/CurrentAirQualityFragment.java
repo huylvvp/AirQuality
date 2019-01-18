@@ -1,10 +1,16 @@
 package com.kevinlu.airquality;
 
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.icu.util.Calendar;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -58,6 +64,7 @@ public class CurrentAirQualityFragment extends Fragment {
     /**
      * This is just to make sure the CurrentAirQualityFragment is not null
      * when it is created.
+     *
      * @return - the instance of the CurrentAirQualityFragment
      */
     public static CurrentAirQualityFragment getInstance() {
@@ -71,14 +78,50 @@ public class CurrentAirQualityFragment extends Fragment {
         // Empty constructor
     }
 
+
+    /**
+     * Called when the activity is starting.
+     *
+     * @param savedInstanceState - a Bundle, if the activity is being
+     *                           re-initialized after previously being
+     *                           shut down then this Bundle contains
+     *                           the data it most recently supplied in
+     *                           onSaveInstanceState(Bundle).
+     *                           Note: Otherwise it is null.
+     */
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Check if user is connected to the internet
+        //If the user is connected, don't show it
+        if (!isNetworkAvailable()) {
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(getContext(), android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(getContext());
+            }
+            builder.setTitle("No internet connection")
+                    .setMessage("You must have an internet connection to receive the latest air quality information.")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+    }
+
     /**
      * Creates and returns the view hierarchy associated with the fragment
-     * @param inflater - The LayoutInflater object that can be used to
-     *                 inflate any views in the fragment
-     * @param container - a ViewGroup, if non-null, this is the parent view
-     *                  that the fragment's UI should be attached to. The
-     *                  fragment should not add the view itself, but this
-     *                  can be used to generate the LayoutParams of the view.
+     *
+     * @param inflater           - The LayoutInflater object that can be used to
+     *                           inflate any views in the fragment
+     * @param container          - a ViewGroup, if non-null, this is the parent view
+     *                           that the fragment's UI should be attached to. The
+     *                           fragment should not add the view itself, but this
+     *                           can be used to generate the LayoutParams of the view.
      * @param savedInstanceState - a Bundle, if non-null, this fragment
      *                           is being re-constructed from a previous
      *                           saved state as given here.
@@ -92,9 +135,7 @@ public class CurrentAirQualityFragment extends Fragment {
 
         currentLayout = itemView.findViewById(R.id.current_bg);
 
-        //airQualityPicture = itemView.findViewById(R.id.airquality_picture);
         cityName = itemView.findViewById(R.id.cityName);
-        //countryName = itemView.findViewById(R.id.countryName);
         cityTimeStamp = itemView.findViewById(R.id.cityTimestamp);
         cityAQI = itemView.findViewById(R.id.cityAQI);
         cityAQIRating = itemView.findViewById(R.id.cityAQIRating);
@@ -115,6 +156,18 @@ public class CurrentAirQualityFragment extends Fragment {
         getCurrentAirQualityData();
 
         return itemView;
+    }
+
+    /**
+     * This method checks if the user is connected to the internet.
+     * @return - true, if the user is connected.
+     *           false, if the user is not connected.
+     */
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     /**
@@ -155,6 +208,7 @@ public class CurrentAirQualityFragment extends Fragment {
     /**
      * This function loads in the current air quality information based on the
      * user's IP address location.
+     *
      * @param station - a Station object that contains information from the API
      */
     private void loadCurrentData(Station station) {
@@ -215,6 +269,7 @@ public class CurrentAirQualityFragment extends Fragment {
 
     /**
      * This method converts a ISO-8601 timestamp to a readable date.
+     *
      * @param timestamp - a String of ISO-8601 compliant timestamp
      * @return - a String of the formatted date in words
      */
@@ -228,6 +283,7 @@ public class CurrentAirQualityFragment extends Fragment {
 
     /**
      * This method converts a numerical AQI value to its severity ranking in words
+     *
      * @param aqius - This is the air quality index by U.S. EPA standards
      * @return the rank of the air quality index, a String
      */

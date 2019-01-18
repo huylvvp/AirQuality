@@ -1,9 +1,14 @@
 package com.kevinlu.airquality;
 
 
+import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
@@ -103,6 +108,26 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
 
+        //Check if user is connected to the internet
+        //If the user is connected, don't show it
+        if (!isNetworkAvailable()) {
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(getContext(), android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(getContext());
+            }
+            builder.setTitle("No internet connection")
+                    .setMessage("You must have an internet connection to receive the latest air quality information.")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+
         //Initialize the Spinner
         spinnerList = new ArrayList<>();
         loadSpinnerListItems();
@@ -173,6 +198,18 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     public void onStart() {
         super.onStart();
         loadDataFromFirebase();
+    }
+
+    /**
+     * This method checks if the user is connected to the internet.
+     * @return - true, if the user is connected.
+     *           false, if the user is not connected.
+     */
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     /**

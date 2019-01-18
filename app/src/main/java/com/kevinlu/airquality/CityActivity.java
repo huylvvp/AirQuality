@@ -24,6 +24,7 @@ import static com.kevinlu.airquality.ListFragment.EXTRA_COORDINATES;
 import static com.kevinlu.airquality.ListFragment.EXTRA_MAIN_POLLUTANT_CN;
 import static com.kevinlu.airquality.ListFragment.EXTRA_MAIN_POLLUTANT_US;
 import static com.kevinlu.airquality.ListFragment.EXTRA_TIMESTAMP;
+import static com.kevinlu.airquality.ListFragment.EXTRA_STATION_JSON;
 
 /**
  * The CityActivity class extends the AppCompatActivity.
@@ -51,6 +52,8 @@ public class CityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
 
+        Gson gson = new Gson();
+
         Intent intent = getIntent();
         String cityName = intent.getStringExtra(EXTRA_CITY_NAME);
         String coordinates = intent.getStringExtra(EXTRA_COORDINATES);
@@ -59,6 +62,13 @@ public class CityActivity extends AppCompatActivity {
         String mainPollutantUS = intent.getStringExtra(EXTRA_MAIN_POLLUTANT_US);
         String aqiCN = intent.getStringExtra(EXTRA_AQI_CN);
         String mainPollutantCN = intent.getStringExtra(EXTRA_MAIN_POLLUTANT_CN);
+        String stationJSON = intent.getStringExtra(EXTRA_STATION_JSON);
+
+        Station station = gson.fromJson(stationJSON, Station.class);
+
+        String countryName = station.getData().getCountry();
+
+        Log.d("JSON test", station.getStatus());
 
         ImageView imageView = findViewById(R.id.cityImage);
         TextView textViewCoordinates = findViewById(R.id.cityCoordinates);
@@ -78,7 +88,7 @@ public class CityActivity extends AppCompatActivity {
         textViewAQICN.setText("China AQI: " + aqiCN);
         textViewMainPollutantCN.setText("China Main Pollutant: " + decodePollutant(mainPollutantCN));
 
-        loadHeaderImageFromUnsplash(cityName, imageView);
+        loadHeaderImageFromUnsplash(countryName, imageView);
     }
 
     /**

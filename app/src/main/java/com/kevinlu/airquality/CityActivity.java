@@ -17,13 +17,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import static com.kevinlu.airquality.ListFragment.EXTRA_AQI_CN;
-import static com.kevinlu.airquality.ListFragment.EXTRA_AQI_US;
-import static com.kevinlu.airquality.ListFragment.EXTRA_CITY_NAME;
 import static com.kevinlu.airquality.ListFragment.EXTRA_COORDINATES;
-import static com.kevinlu.airquality.ListFragment.EXTRA_MAIN_POLLUTANT_CN;
-import static com.kevinlu.airquality.ListFragment.EXTRA_MAIN_POLLUTANT_US;
-import static com.kevinlu.airquality.ListFragment.EXTRA_TIMESTAMP;
 import static com.kevinlu.airquality.ListFragment.EXTRA_STATION_JSON;
 
 /**
@@ -55,20 +49,18 @@ public class CityActivity extends AppCompatActivity {
         Gson gson = new Gson();
 
         Intent intent = getIntent();
-        String cityName = intent.getStringExtra(EXTRA_CITY_NAME);
-        String coordinates = intent.getStringExtra(EXTRA_COORDINATES);
-        String timestamp = intent.getStringExtra(EXTRA_TIMESTAMP);
-        String aqiUS = intent.getStringExtra(EXTRA_AQI_US);
-        String mainPollutantUS = intent.getStringExtra(EXTRA_MAIN_POLLUTANT_US);
-        String aqiCN = intent.getStringExtra(EXTRA_AQI_CN);
-        String mainPollutantCN = intent.getStringExtra(EXTRA_MAIN_POLLUTANT_CN);
-        String stationJSON = intent.getStringExtra(EXTRA_STATION_JSON);
 
+        String stationJSON = intent.getStringExtra(EXTRA_STATION_JSON);
         Station station = gson.fromJson(stationJSON, Station.class);
 
         String countryName = station.getData().getCountry();
-
-        Log.d("JSON test", station.getStatus());
+        String cityName = station.getData().getCity();
+        String coordinates = intent.getStringExtra(EXTRA_COORDINATES);
+        String timestamp = station.getData().getCurrent().getPollution().getTs();
+        String aqiUS = station.getData().getCurrent().getPollution().getAqius() + "";
+        String mainPollutantUS = station.getData().getCurrent().getPollution().getMainus();
+        String aqiCN = station.getData().getCurrent().getPollution().getAqicn() + "";
+        String mainPollutantCN = station.getData().getCurrent().getPollution().getMaincn();
 
         ImageView imageView = findViewById(R.id.cityImage);
         TextView textViewCoordinates = findViewById(R.id.cityCoordinates);
@@ -79,6 +71,9 @@ public class CityActivity extends AppCompatActivity {
         TextView textViewMainPollutantCN = findViewById(R.id.cityMainPollutantCN);
 
         Toolbar toolbar = findViewById(R.id.cityToolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setTitle(cityName);
 
         textViewCoordinates.setText("Coordinates: " + coordinates);
@@ -89,6 +84,17 @@ public class CityActivity extends AppCompatActivity {
         textViewMainPollutantCN.setText("China Main Pollutant: " + decodePollutant(mainPollutantCN));
 
         loadHeaderImageFromUnsplash(countryName, imageView);
+    }
+
+    /**
+     * This method navigates back to the previous activity.
+     * @return - true, when the back button on the toolbar
+     *           is pressed.
+     */
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
     /**

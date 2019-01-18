@@ -66,13 +66,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     private SearchView.OnQueryTextListener queryTextListener;
     private SpinnerDialog spinnerDialog;
 
-    public static final String EXTRA_CITY_NAME = "cityName";
     public static final String EXTRA_COORDINATES = "coordinates";
-    public static final String EXTRA_TIMESTAMP = "timestamp";
-    public static final String EXTRA_AQI_US = "aqiUS";
-    public static final String EXTRA_MAIN_POLLUTANT_US = "mainPollutantUS";
-    public static final String EXTRA_AQI_CN = "aqiCN";
-    public static final String EXTRA_MAIN_POLLUTANT_CN = "mainPollutantCN";
     public static final String EXTRA_STATION_JSON = "stationJSON";
 
     private final String url = "http://api.airvisual.com/v2/city?city={{YOUR_CITY}}&state={{YOUR_STATE}}&country={{YOUR_COUNTRY}}&key=5X5FwBMHiD2DDKWBf";

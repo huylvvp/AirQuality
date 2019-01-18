@@ -4,6 +4,7 @@ package com.kevinlu.airquality;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -30,8 +31,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -116,11 +120,13 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         //Set the recyclerView's listAdapter to the listAdapter object
         recyclerView.setAdapter(listAdapter);
 
-        if (stationList.size() == 0) {
-            loadDataFromFirebase();
-        }
-
         return itemView;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        loadDataFromFirebase();
     }
 
     private void uploadDataToFirebase(Station station) {
@@ -137,7 +143,24 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     private void loadDataFromFirebase() {
         //Initialize the Firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        //Set the database reference to the stations list in Firebase
+        DatabaseReference stations = database.getReference("stations");
+        stations.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                stationList.clear();
+                for (DataSnapshot stationSnapshot : dataSnapshot.getChildren()) {
+                    Station station = stationSnapshot.getValue(Station.class);
+                    stationList.add(station);
+                }
+                listAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                //Return the error here... Check Logcat console
+            }
+        });
     }
 
     @Override

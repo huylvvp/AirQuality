@@ -35,10 +35,15 @@ import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
+ * This Fragment is part of the MainActivity class
+ * It is 1 of the 2 tabs available for use.
+ * This Fragment displays air quality information based
+ * on the user's IP address location.
  */
 public class CurrentAirQualityFragment extends Fragment {
 
-    private final String url = "http://api.airvisual.com/v2/nearest_city?key=5zbAzdPBu2RftKbus";
+    private final String url = "http://api.airvisual.com/v2/nearest_city?key=5X5FwBMHiD2DDKWBf";
+    //private final String url = "http://api.airvisual.com/v2/nearest_city?key=5zbAzdPBu2RftKbus";
     //private final String url = "http://api.airvisual.com/v2/nearest_city?key=ag85mSsqaj2Y24HvQ";
 
     ImageView airQualityPicture;
@@ -50,6 +55,11 @@ public class CurrentAirQualityFragment extends Fragment {
 
     static CurrentAirQualityFragment instance;
 
+    /**
+     * This is just to make sure the CurrentAirQualityFragment is not null
+     * when it is created.
+     * @return - the instance of the CurrentAirQualityFragment
+     */
     public static CurrentAirQualityFragment getInstance() {
         if (instance == null) {
             instance = new CurrentAirQualityFragment();
@@ -61,7 +71,19 @@ public class CurrentAirQualityFragment extends Fragment {
         // Empty constructor
     }
 
-
+    /**
+     * Creates and returns the view hierarchy associated with the fragment
+     * @param inflater - The LayoutInflater object that can be used to
+     *                 inflate any views in the fragment
+     * @param container - a ViewGroup, if non-null, this is the parent view
+     *                  that the fragment's UI should be attached to. The
+     *                  fragment should not add the view itself, but this
+     *                  can be used to generate the LayoutParams of the view.
+     * @param savedInstanceState - a Bundle, if non-null, this fragment
+     *                           is being re-constructed from a previous
+     *                           saved state as given here.
+     * @return - Return the View for the fragment's UI, or null.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -95,6 +117,9 @@ public class CurrentAirQualityFragment extends Fragment {
         return itemView;
     }
 
+    /**
+     * This function sends a request to the API to get the current data.
+     */
     private void getCurrentAirQualityData() {
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
         //Request a string response from the provided URL, create a new StringRequest object
@@ -127,6 +152,11 @@ public class CurrentAirQualityFragment extends Fragment {
         requestQueue.add(stringRequest);
     }
 
+    /**
+     * This function loads in the current air quality information based on the
+     * user's IP address location.
+     * @param station - a Station object that contains information from the API
+     */
     private void loadCurrentData(Station station) {
         cityName.setText(station.getData().getCity());
         cityTimeStamp.setText(decodeTimestamp(station.getData().getCurrent().getPollution().getTs()));
@@ -140,7 +170,6 @@ public class CurrentAirQualityFragment extends Fragment {
         //Changing the background image depending on the time of day
         //Also changes the status bar color if the device has
         //Android Lollipop or above
-
         if (hour >= 20 || hour < 5) {
             currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_night));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -178,6 +207,7 @@ public class CurrentAirQualityFragment extends Fragment {
     }
 
     /**
+     * This method converts a ISO-8601 timestamp to a readable date.
      * @param timestamp - a String of ISO-8601 compliant timestamp
      * @return - a String of the formatted date in words
      */
@@ -189,6 +219,11 @@ public class CurrentAirQualityFragment extends Fragment {
         return formattedDate;
     }
 
+    /**
+     * This method converts a numerical AQI value to its severity ranking in words
+     * @param aqius - This is the air quality index by U.S. EPA standards
+     * @return the rank of the air quality index, a String
+     */
     private String rankAQIUS(int aqius) {
         if (aqius >= 0 && aqius <= 50) {
             return "Good";

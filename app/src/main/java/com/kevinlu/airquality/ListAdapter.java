@@ -25,7 +25,6 @@ import java.util.ArrayList;
  * @version 1.0
  *
  */
-
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private Context context;
     private ArrayList<Station> stationList;
@@ -44,7 +43,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     /**
      * Sets the OnItemClickListener.
-     *
      * @param listener - an OnItemClickListener interface
      */
     public void setOnItemClickListener(OnItemClickListener listener) {
@@ -253,6 +251,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         }
     }
 
+    /**
+     * This function sets the stationList to the new filteredList.
+     * @param filteredList - an ArrayList of Station objects.
+     */
     public void filterList(ArrayList<Station> filteredList) {
         stationList = filteredList;
         notifyDataSetChanged();

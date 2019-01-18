@@ -102,9 +102,6 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
-        ItemTouchHelper.SimpleCallback ItemTouchHelperCallbackLeft = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
-        new ItemTouchHelper(ItemTouchHelperCallbackLeft).attachToRecyclerView(recyclerView);
-
         //Initialize the recyclerView so it can display the data in the ArrayList
         recyclerView = itemView.findViewById(R.id.recyclerView);
         //Setting some properties of the recyclerView
@@ -112,6 +109,9 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL));
+
+        ItemTouchHelper.SimpleCallback ItemTouchHelperCallbackLeft = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT, this);
+        new ItemTouchHelper(ItemTouchHelperCallbackLeft).attachToRecyclerView(recyclerView);
 
         //Initialize the listAdapter object so it can update the recyclerView
         //with data from the ArrayList
@@ -135,7 +135,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         //Set the database reference to the stations list in Firebase
         DatabaseReference stations = database.getReference("stations");
         //Set an id for each Station object added to Firebase
-        String id = stations.push().getKey();
+        String id = station.getData().getCity();
         //Add the object to Firebase
         stations.child(id).setValue(station);
     }
@@ -388,6 +388,12 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction, int position) {
         if (viewHolder instanceof ListAdapter.ViewHolder) {
             if (direction == ItemTouchHelper.LEFT) {
+                //Initialize the Firebase database
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //Set the database reference to the stations list in Firebase
+                DatabaseReference stations = database.getReference("stations");
+
+                //Get the name of the city
                 String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
 
                 //Create a backup of the deleted item in case user wants to undo delete
@@ -396,14 +402,16 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
                 //Remove the item from RecyclerView
                 listAdapter.removeItem(deletedStationIndex);
+                //Remove the item from Firebase
+                stations.child(cityName).removeValue();
 
-                Snackbar snackbar = Snackbar.make(coordinatorLayout, cityName + " removed from list!", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(getView(), cityName + " removed from list!", Snackbar.LENGTH_LONG);
                 snackbar.setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         // undo is selected, restore the deleted item
                         listAdapter.restoreItem(deletedStation, position);
+                        stations.child(cityName).setValue(deletedStation);
                     }
                 });
                 snackbar.show();

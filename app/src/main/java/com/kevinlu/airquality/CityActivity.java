@@ -1,9 +1,11 @@
 package com.kevinlu.airquality;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -163,21 +165,23 @@ public class CityActivity extends AppCompatActivity {
      * This function uses an Unsplash library to load a header image
      * corresponding to the city of interest.
      *
-     * @param cityName  - a String, the name of the city.
+     * @param countryName  - a String, the name of the city.
      * @param imageView - the ImageView that should hold this image.
      */
-    private void loadHeaderImageFromUnsplash(String cityName, ImageView imageView) {
+    private void loadHeaderImageFromUnsplash(String countryName, ImageView imageView) {
         Unsplash unsplash = new Unsplash("2ef4adbbc6aa68fb62acbf7170933cbc25526420aa6da426c16cb0c08ce5cffd");
-        unsplash.searchPhotos(cityName, new Unsplash.OnSearchCompleteListener() {
+        unsplash.searchPhotos(countryName, new Unsplash.OnSearchCompleteListener() {
             @Override
             public void onComplete(SearchResults results) {
                 Log.d("Photos", "Total Results Found " + results.getTotal());
+                //TODO: add some random function (random(0, photos.size)) to get more pictures
                 List<Photo> photos = results.getResults();
-                unsplash.getPhotoDownloadLink(photos.get(0).getId(), new Unsplash.OnLinkLoadedListener() {
+                int random = (int)(Math.random() * photos.size());
+                unsplash.getPhotoDownloadLink(photos.get(random).getId(), new Unsplash.OnLinkLoadedListener() {
                     @Override
                     public void onComplete(Download downloadLink) {
                         String imageLink = downloadLink.getUrl();
-                        Picasso.get().load(imageLink).into(imageView);
+                        Picasso.get().load(imageLink).fit().centerCrop().into(imageView);
                     }
 
                     @Override

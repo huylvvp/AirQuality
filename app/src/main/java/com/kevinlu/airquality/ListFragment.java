@@ -6,6 +6,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -70,6 +71,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     private SearchView searchView = null;
     private SearchView.OnQueryTextListener queryTextListener;
     private SpinnerDialog spinnerDialog;
+    private DatabaseHelper databaseHelper;
 
     public static final String EXTRA_COORDINATES = "coordinates";
     public static final String EXTRA_STATION_JSON = "stationJSON";
@@ -81,6 +83,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     /**
      * This is just to make sure the ListFragment is not null
      * when it is created.
+     *
      * @return - the instance of the ListFragment
      */
     public static ListFragment getInstance() {
@@ -96,6 +99,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
     /**
      * Called when the activity is starting.
+     *
      * @param savedInstanceState - a Bundle, if the activity is being
      *                           re-initialized after previously being
      *                           shut down then this Bundle contains
@@ -107,6 +111,8 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+        databaseHelper = new DatabaseHelper(getActivity());
 
         //Check if user is connected to the internet
         //If the user is connected, don't show it
@@ -144,12 +150,13 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
     /**
      * Creates and returns the view hierarchy associated with the fragment
-     * @param inflater - The LayoutInflater object that can be used to
-     *                 inflate any views in the fragment
-     * @param container - a ViewGroup, if non-null, this is the parent view
-     *                  that the fragment's UI should be attached to. The
-     *                  fragment should not add the view itself, but this
-     *                  can be used to generate the LayoutParams of the view.
+     *
+     * @param inflater           - The LayoutInflater object that can be used to
+     *                           inflate any views in the fragment
+     * @param container          - a ViewGroup, if non-null, this is the parent view
+     *                           that the fragment's UI should be attached to. The
+     *                           fragment should not add the view itself, but this
+     *                           can be used to generate the LayoutParams of the view.
      * @param savedInstanceState - a Bundle, if non-null, this fragment
      *                           is being re-constructed from a previous
      *                           saved state as given here.
@@ -190,6 +197,16 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         return itemView;
     }
 
+    public void addData(String data) {
+        boolean insertData = databaseHelper.addData(data);
+
+        if (insertData) {
+            Log.v("yeet", "Added data to SQLITE!");
+        } else {
+            Log.e("yeet", "you didnt yeet today");
+        }
+    }
+
     /**
      * Called after onCreate(Bundle) when the activity had been stopped,
      * but is now again being displayed to the user.
@@ -197,13 +214,15 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     @Override
     public void onStart() {
         super.onStart();
-        loadDataFromFirebase();
+        //loadDataFromFirebase();
+        loadDataFromSQLiteDatabase();
     }
 
     /**
      * This method checks if the user is connected to the internet.
+     *
      * @return - true, if the user is connected.
-     *           false, if the user is not connected.
+     * false, if the user is not connected.
      */
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
@@ -214,6 +233,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
 
     /**
      * This function uploads a Station object's data to the Firebase database
+     *
      * @param station - a Station object that contains information from API
      */
     private void uploadDataToFirebase(Station station) {
@@ -254,8 +274,33 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     }
 
     /**
+     * This function loads a Station object's data from the SQLITE database
+     */
+    private void loadDataFromSQLiteDatabase() {
+        //Get the JSON data with the DatabaseHelper class
+        Cursor data = databaseHelper.getData();
+        //Using Gson to turn JSON to Java object of Station
+        //Create new GsonBuilder and Gson objects
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gson = gsonBuilder.create();
+        while (data.moveToNext()) {
+            //Get the next JSON from the database
+            String jsonResponse = data.getString(1);
+            //Create a new Station object and use Gson to deserialize JSON data
+            //into the Station object
+            Station station = gson.fromJson(jsonResponse, Station.class);
+            //Add the new Station object to the ArrayList of Station objects
+            //This is to create another entry in the RecyclerView
+            //Tell the RecyclerView listAdapter that our data is updated
+            //because Station was just to the ArrayList
+            stationList.add(station);
+        }
+    }
+
+    /**
      * Initialize the contents of the Activity's standard options menu.
-     * @param menu - a Menu, the options menu in which items are placed into.
+     *
+     * @param menu     - a Menu, the options menu in which items are placed into.
      * @param inflater - a MenuInflater to create the Menu.
      */
     @Override
@@ -287,6 +332,7 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
                     filter(query.toLowerCase());
                     return true;
                 }
+
                 /**
                  * Called when the query text is changed by the user.
                  *
@@ -496,7 +542,9 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
                         stationList.add(station);
                         listAdapter.notifyDataSetChanged();
                         //Add the new Station object to Firebase
-                        uploadDataToFirebase(station);
+                        //uploadDataToFirebase(station);
+                        //Add the new Station object to SQLite database
+                        addData(response);
                         //Write the API response data to the log console
                         Log.d("API RESPONSE", response);
                     }
@@ -515,13 +563,14 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
      * This function takes the selected Station and turns it
      * into a request URL. This URL will be used to load data
      * into the RecyclerView list.
+     *
      * @param stationName - a String that the user selected from the Spinner
      * @return - a String that contains the request URL
      */
     private String generateRequestURL(String stationName) {
         String city = stationName.substring(0, stationName.indexOf(','));
-        String state = stationName.substring(stationName.indexOf(',')+2, stationName.lastIndexOf(','));
-        String country = stationName.substring(stationName.lastIndexOf(',')+2, stationName.length());
+        String state = stationName.substring(stationName.indexOf(',') + 2, stationName.lastIndexOf(','));
+        String country = stationName.substring(stationName.lastIndexOf(',') + 2, stationName.length());
 
         String newURL = url.replace("{{YOUR_CITY}}", city);
         newURL = newURL.replace("{{YOUR_STATE}}", state);
@@ -546,21 +595,38 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
         if (viewHolder instanceof ListAdapter.ViewHolder) {
             if (direction == ItemTouchHelper.LEFT) {
                 //Initialize the Firebase database
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                //We are no longer using Firebase now!
+                //FirebaseDatabase database = FirebaseDatabase.getInstance();
                 //Set the database reference to the stations list in Firebase
-                DatabaseReference stations = database.getReference("stations");
+                //DatabaseReference stations = database.getReference("stations");
+
+                //Use Gson
+                Gson gson = new Gson();
 
                 //Get the name of the city
                 String cityName = stationList.get(viewHolder.getAdapterPosition()).getData().getCity();
 
                 //Create a backup of the deleted item in case user wants to undo delete
                 Station deletedStation = stationList.get(viewHolder.getAdapterPosition());
+                String deletedStationJSON = gson.toJson(deletedStation);
                 int deletedStationIndex = viewHolder.getAdapterPosition();
+
+                Cursor data = databaseHelper.getItemID(deletedStationJSON);
+
+                int itemID = -1;
+                while (data.moveToNext()) {
+                    itemID = data.getInt(0);
+                }
 
                 //Remove the item from RecyclerView
                 listAdapter.removeItem(deletedStationIndex);
                 //Remove the item from Firebase
-                stations.child(cityName).removeValue();
+                //stations.child(cityName).removeValue();
+                //Remove the item from SQLiteDatabase
+                databaseHelper.deleteData(itemID, deletedStationJSON);
+                //databaseHelper.deleteRule(itemID, deletedStationJSON);
+
+                Log.d("yeet", "deleted!!!");
 
                 Snackbar snackbar = Snackbar.make(getView(), cityName + " removed from list!", Snackbar.LENGTH_LONG);
                 snackbar.setAction("UNDO", new View.OnClickListener() {
@@ -568,7 +634,8 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
                     public void onClick(View view) {
                         // undo is selected, restore the deleted item
                         listAdapter.restoreItem(deletedStation, position);
-                        stations.child(cityName).setValue(deletedStation);
+                        //stations.child(cityName).setValue(deletedStation);
+                        addData(deletedStationJSON);
                     }
                 });
                 snackbar.show();

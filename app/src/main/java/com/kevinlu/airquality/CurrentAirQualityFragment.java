@@ -1,6 +1,7 @@
 package com.kevinlu.airquality;
 
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -34,7 +35,10 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.lang.annotation.Target;
+import java.sql.Time;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
@@ -160,8 +164,9 @@ public class CurrentAirQualityFragment extends Fragment {
 
     /**
      * This method checks if the user is connected to the internet.
+     *
      * @return - true, if the user is connected.
-     *           false, if the user is not connected.
+     * false, if the user is not connected.
      */
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
@@ -193,12 +198,16 @@ public class CurrentAirQualityFragment extends Fragment {
                     //into the Station object
                     Station station = gson.fromJson(response, Station.class);
                     //Call the loadCurrentData method to display the data
-                    loadCurrentData(station);
-
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        loadCurrentDataTargetApi26(station);
+                    } else {
+                        loadCurrentDataTarget(station);
+                    }
                     //Write the API response data to the log console
                     Log.d("API RESPONSE", response);
                 }, error -> {
             //Write the error from Volley to the log console
+            //TODO: add a try - catch block in case too many API requests
             Log.d("VOLLEY ERROR", error.toString());
         });
         //Add the request to the RequestQueue
@@ -207,17 +216,70 @@ public class CurrentAirQualityFragment extends Fragment {
 
     /**
      * This function loads in the current air quality information based on the
-     * user's IP address location.
+     * user's IP address location. Only if API level is 26 or higher.
      *
      * @param station - a Station object that contains information from the API
      */
-    private void loadCurrentData(Station station) {
+    @TargetApi(26)
+    private void loadCurrentDataTargetApi26(Station station) {
         cityName.setText(station.getData().getCity());
         cityTimeStamp.setText(decodeTimestamp(station.getData().getCurrent().getPollution().getTs()));
         cityAQI.setText(station.getData().getCurrent().getPollution().getAqius().toString());
         cityAQIRating.setText(rankAQIUS(station.getData().getCurrent().getPollution().getAqius()));
 
         int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+
+        Log.d("Time", "24 hours: " + hour);
+
+        //Changing the background image depending on the time of day
+        //Also changes the status bar color if the device has
+        //Android Lollipop or above
+        if (hour >= 0 && hour < 5) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_night));
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#041b20"));
+        } else if (hour >= 5 && hour < 7) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunrise));
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#060f18"));
+        } else if (hour >= 7 && hour < 17) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunny));
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#08253b"));
+        } else if (hour >= 17 && hour < 20) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_sunset));
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#20244c"));
+        } else if (hour >= 20 && hour < 24) {
+            currentLayout.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.bg_night));
+            Window window = getActivity().getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor("#041b20"));
+        }
+
+        //Display the information after it's been loaded
+        //Hide the progress bar and show the info.
+        currentPanel.setVisibility(View.VISIBLE);
+        currentProgressBar.setVisibility(View.GONE);
+    }
+
+    /**
+     * This function loads in the current air quality information based on the
+     * user's IP address location. Only if API level is lower than 26.
+     *
+     * @param station - a Station object that contains information from the API
+     */
+    private void loadCurrentDataTarget(Station station) {
+        cityName.setText(station.getData().getCity());
+        cityTimeStamp.setText(station.getData().getCurrent().getPollution().getTs());
+        cityAQI.setText(station.getData().getCurrent().getPollution().getAqius().toString());
+        cityAQIRating.setText(rankAQIUS(station.getData().getCurrent().getPollution().getAqius()));
+
+        int hour = new Time(System.currentTimeMillis()).getHours();
 
         Log.d("Time", "24 hours: " + hour);
 
@@ -273,6 +335,7 @@ public class CurrentAirQualityFragment extends Fragment {
      * @param timestamp - a String of ISO-8601 compliant timestamp
      * @return - a String of the formatted date in words
      */
+    @TargetApi(26)
     private String decodeTimestamp(String timestamp) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("EEEE, MMMM d", Locale.ENGLISH);

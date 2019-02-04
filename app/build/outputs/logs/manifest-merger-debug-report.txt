@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\6d524d6027ae0fc8fa3d2b9a4440c88c\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\35a382fc3505ac7143da1ffa760036f6\AndroidManifest.xml:2:1-13:12
 MERGED from [com.kc.androidunsplash:androidunsplash:0.2.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\androidunsplash-0.2.1.aar\8046d28a277e5ff75a2371072eecc265\AndroidManifest.xml:2:1-19:12
@@ -35,6 +35,7 @@ MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\kevin\.gradle\
 MERGED from [com.android.support:cardview-v7:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.1.aar\af4a88b578d7f98d89688ff5b1cb0eab\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\6ff9b0edccf760d2c39c680fce9990f8\AndroidManifest.xml:2:1-11:12
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:2:1-14:12
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:2:1-19:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8701632ab10a0c6ebf07b8b2b0f85e68\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\e595dfe817652c519c9d71004b2197dd\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\15eee212d4bdfc34705c51179c10b686\AndroidManifest.xml:17:1-22:12
@@ -46,26 +47,30 @@ MERGED from [com.android.support:support-compat:27.1.1] C:\Users\kevin\.gradle\c
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\7cec44687733a71e011a16c4f712a1cc\AndroidManifest.xml:17:1-22:12
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\fe2ca190a480209a95fdd32af2780dd6\AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\18fa0e9e6cc89063eb3c2034acd161a4\AndroidManifest.xml:2:1-7:12
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:2:1-13:12
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:45:1-56:12
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:2:1-13:12
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:22:1-33:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a1496abd527aa0d67d046f20bc7fa40f\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\3d938f5699e57458853fad6b75482bf4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a96bcbdee1f74285702a99cfb6dfe11c\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\92a314c869c45e968375b4221ce2c5c6\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
+INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
 	package
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:4:5-37
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:1-32:12
 		INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:2:11-69
@@ -85,6 +90,16 @@ MERGED from [com.google.firebase:firebase-analytics-impl:16.2.3] C:\Users\kevin\
 MERGED from [com.google.firebase:firebase-analytics-impl:16.2.3] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.2.3.aar\17c17ddbd82fbebe24fc47e04ba6de4c\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\211220a8dec5f4fc32f13ebce8571dcb\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:17.0.3] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-iid-17.0.3.aar\211220a8dec5f4fc32f13ebce8571dcb\AndroidManifest.xml:23:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:52:5-67
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:52:5-67
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:9:5-67
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:9:5-67
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:29:5-67
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:29:5-67
 	android:name
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.VIBRATE
@@ -98,7 +113,7 @@ MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.0] C:\Users\kevin\.gra
 	android:name
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:8:22-76
 application
-ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:10:5-27:19
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:10:5-30:19
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\35a382fc3505ac7143da1ffa760036f6\AndroidManifest.xml:11:5-47
 MERGED from [com.github.paolorotolo:appintro:v4.2.2] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\appintro-v4.2.2.aar\35a382fc3505ac7143da1ffa760036f6\AndroidManifest.xml:11:5-47
 MERGED from [com.kc.androidunsplash:androidunsplash:0.2.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\androidunsplash-0.2.1.aar\8046d28a277e5ff75a2371072eecc265\AndroidManifest.xml:13:5-17:19
@@ -143,8 +158,18 @@ MERGED from [com.android.volley:volley:1.1.1] C:\Users\kevin\.gradle\caches\tran
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\6ff9b0edccf760d2c39c680fce9990f8\AndroidManifest.xml:9:5-20
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:7:5-12:19
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:7:5-12:19
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:11:5-17:19
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:11:5-17:19
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\fe2ca190a480209a95fdd32af2780dd6\AndroidManifest.xml:8:5-20
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\fe2ca190a480209a95fdd32af2780dd6\AndroidManifest.xml:8:5-20
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:54:5-20
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:54:5-20
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:11:5-20
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:11:5-20
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:31:5-20
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:31:5-20
 	android:supportsRtl
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:15:9-35
 	android:label
@@ -179,6 +204,12 @@ activity#com.kevinlu.airquality.CityActivity
 ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:26:9-50
 	android:name
 		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:26:19-47
+meta-data#io.fabric.ApiKey
+ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:27:9-29:72
+	android:value
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:29:13-69
+	android:name
+		ADDED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml:28:13-44
 uses-sdk
 INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\kevin\Documents\GitHub\AirQuality\app\src\main\AndroidManifest.xml
@@ -245,6 +276,8 @@ MERGED from [com.android.volley:volley:1.1.1] C:\Users\kevin\.gradle\caches\tran
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\volley-1.1.1.aar\6ff9b0edccf760d2c39c680fce9990f8\AndroidManifest.xml:7:5-43
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:5:5-44
 MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:5:5-44
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:7:5-43
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8701632ab10a0c6ebf07b8b2b0f85e68\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\8701632ab10a0c6ebf07b8b2b0f85e68\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\e595dfe817652c519c9d71004b2197dd\AndroidManifest.xml:20:5-44
@@ -267,6 +300,14 @@ MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\kevin\.gradle\caches\
 MERGED from [com.jakewharton.timber:timber:4.5.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\timber-4.5.1.aar\fe2ca190a480209a95fdd32af2780dd6\AndroidManifest.xml:6:5-43
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\18fa0e9e6cc89063eb3c2034acd161a4\AndroidManifest.xml:5:5-44
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-16.0.1.aar\18fa0e9e6cc89063eb3c2034acd161a4\AndroidManifest.xml:5:5-44
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:beta:1.2.10] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\beta-1.2.10.aar\b36e7e69eafc54d938d4133e191b78b0\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:50:5-43
+MERGED from [com.crashlytics.sdk.android:crashlytics-core:2.6.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-core-2.6.7.aar\0cdf705f1b8e809873be64a5e0cd1137\AndroidManifest.xml:50:5-43
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:7:5-43
+MERGED from [com.crashlytics.sdk.android:answers:1.4.6] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\answers-1.4.6.aar\f64457f98bb6b5d02c61bfe8cf2477c4\AndroidManifest.xml:7:5-43
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:27:5-43
+MERGED from [io.fabric.sdk.android:fabric:1.4.7] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\fabric-1.4.7.aar\c3711fc9fb9e978ecc1d5d79b2f42d92\AndroidManifest.xml:27:5-43
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a1496abd527aa0d67d046f20bc7fa40f\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a1496abd527aa0d67d046f20bc7fa40f\AndroidManifest.xml:20:5-44
 MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\3d938f5699e57458853fad6b75482bf4\AndroidManifest.xml:20:5-44
@@ -463,3 +504,13 @@ ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\
 		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:11:13-37
 	android:name
 		ADDED from [com.squareup.picasso:picasso:2.71828] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\picasso-2.71828.aar\eba20396265a3fab876d1cb0eda76f9b\AndroidManifest.xml:9:13-64
+provider#com.crashlytics.android.CrashlyticsInitProvider
+ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:12:9-16:38
+	android:authorities
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:14:13-75
+	android:exported
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:16:13-35
+	android:name
+		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.8] C:\Users\kevin\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.8.aar\db0027c1d538d7163c4458e4e6b82d75\AndroidManifest.xml:13:13-75

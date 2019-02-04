@@ -211,7 +211,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     public void removeItem(int position) {
         Station station = stationList.get(position);
-
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
+        dbHelper.deleteStationRecord(station.getData().getCity(), context);
         stationList.remove(position);
         // notify item added by position
         notifyItemRemoved(position);

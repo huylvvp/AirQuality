@@ -7,77 +7,74 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.util.LinkedList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String TAG = "DatabaseHelper";
+    public static final String DATABASE_NAME = "stations.db";
+    private static final int DATABASE_VERSION = 3;
+    public static final String TABLE_NAME = "Station";
+    public static final String COLUMN_NAME = "_name";
+    public static final String COLUMN_JSON = "json";
 
-    private static final String TABLE_NAME = "stations";
-    private static final String COL1 = "ID";
-    private static final String COL2 = "json";
 
     public DatabaseHelper(Context context) {
-        super(context, DatabaseConstants.DB_NAME, null, DatabaseConstants.DB_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        try {
-            db.execSQL(DatabaseConstants.CREATE_TB);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        db.execSQL(" CREATE TABLE " + TABLE_NAME + " (" +
+                COLUMN_NAME + " BLOB NOT NULL, " +
+                COLUMN_JSON + " BLOB NOT NULL);"
+        );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(DatabaseConstants.DROP_TB);
-        onCreate(db);
+        // you can implement here migration process
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        this.onCreate(db);
     }
 
-    public boolean addData(String item) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, item);
-
-        long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
-
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public Cursor getItemID(String item) {
+    /**
+     * Returns all the data from database
+     * @return
+     */
+    public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + COL1 + " FROM " + TABLE_NAME +
-                " WHERE " + COL2 + " = '" + item + "'";
+        String query = "SELECT * FROM " + TABLE_NAME;
         Cursor data = db.rawQuery(query, null);
         return data;
     }
 
-    public void deleteData(int id, String item) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + COL1 + " = '" + id + "'" +
-                " AND " + COL2 + " = '" + item + "'";
-        Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + item + " from database.");
-        sqLiteDatabase.execSQL(query);
-    }
-
-    public void deleteRule(int id, String value) {
+    /**
+     * create record
+     **/
+    public void saveStationRecord(String stationJSON) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, COL2 + " = ?",
-                new String[] { value });
+        ContentValues values = new ContentValues();
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        Gson gson = gsonBuilder.create();
+        //Create a new Station object and use Gson to deserialize JSON data
+        //into the Station object
+        Station station = gson.fromJson(stationJSON, Station.class);
+        values.put(COLUMN_NAME, station.getData().getCity());
+        values.put(COLUMN_JSON, stationJSON);
+        db.insert(TABLE_NAME, null, values);
         db.close();
     }
 
-    public Cursor getData() {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
-        Cursor data = sqLiteDatabase.rawQuery(query, null);
-        return data;
+    /**
+     * delete record
+     **/
+    public void deleteStationRecord(String name, Context context) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE _name='" + name + "'");
     }
 }

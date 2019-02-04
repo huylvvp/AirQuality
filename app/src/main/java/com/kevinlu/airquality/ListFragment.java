@@ -198,13 +198,8 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
     }
 
     public void addData(String data) {
-        boolean insertData = databaseHelper.addData(data);
-
-        if (insertData) {
-            Log.v("yeet", "Added data to SQLITE!");
-        } else {
-            Log.e("yeet", "you didnt yeet today");
-        }
+        databaseHelper = new DatabaseHelper(getActivity());
+        databaseHelper.saveStationRecord(data);
     }
 
     /**
@@ -515,7 +510,6 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
      */
     private void loadSelectedDataToRecyclerView(String selectedStation) {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
-        //fileOutputStream = null;
         //Request a string response from the provided URL, create a new StringRequest object
         /*
          * @param response - This is the response (JSON file) from the API
@@ -611,20 +605,10 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
                 String deletedStationJSON = gson.toJson(deletedStation);
                 int deletedStationIndex = viewHolder.getAdapterPosition();
 
-                Cursor data = databaseHelper.getItemID(deletedStationJSON);
-
-                int itemID = -1;
-                while (data.moveToNext()) {
-                    itemID = data.getInt(0);
-                }
-
                 //Remove the item from RecyclerView
                 listAdapter.removeItem(deletedStationIndex);
                 //Remove the item from Firebase
                 //stations.child(cityName).removeValue();
-                //Remove the item from SQLiteDatabase
-                databaseHelper.deleteData(itemID, deletedStationJSON);
-                //databaseHelper.deleteRule(itemID, deletedStationJSON);
 
                 Log.d("yeet", "deleted!!!");
 

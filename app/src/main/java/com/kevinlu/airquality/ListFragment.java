@@ -38,11 +38,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -231,42 +226,42 @@ public class ListFragment extends Fragment implements RecyclerItemTouchHelperLis
      *
      * @param station - a Station object that contains information from API
      */
-    private void uploadDataToFirebase(Station station) {
-        //Initialize the Firebase database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Set the database reference to the stations list in Firebase
-        DatabaseReference stations = database.getReference("stations");
-        //Set an id for each Station object added to Firebase
-        String id = station.getData().getCity();
-        //Add the object to Firebase
-        stations.child(id).setValue(station);
-    }
+//    private void uploadDataToFirebase(Station station) {
+//        //Initialize the Firebase database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        //Set the database reference to the stations list in Firebase
+//        DatabaseReference stations = database.getReference("stations");
+//        //Set an id for each Station object added to Firebase
+//        String id = station.getData().getCity();
+//        //Add the object to Firebase
+//        stations.child(id).setValue(station);
+//    }
 
     /**
      * This function loads a Station object's data from the Firebase database
      */
-    private void loadDataFromFirebase() {
-        //Initialize the Firebase database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //Set the database reference to the stations list in Firebase
-        DatabaseReference stations = database.getReference("stations");
-        stations.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                stationList.clear();
-                for (DataSnapshot stationSnapshot : dataSnapshot.getChildren()) {
-                    Station station = stationSnapshot.getValue(Station.class);
-                    stationList.add(station);
-                }
-                listAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                //Return the error here... Check Logcat console
-            }
-        });
-    }
+//    private void loadDataFromFirebase() {
+//        //Initialize the Firebase database
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        //Set the database reference to the stations list in Firebase
+//        DatabaseReference stations = database.getReference("stations");
+//        stations.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                stationList.clear();
+//                for (DataSnapshot stationSnapshot : dataSnapshot.getChildren()) {
+//                    Station station = stationSnapshot.getValue(Station.class);
+//                    stationList.add(station);
+//                }
+//                listAdapter.notifyDataSetChanged();
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//                //Return the error here... Check Logcat console
+//            }
+//        });
+//    }
 
     /**
      * This function loads a Station object's data from the SQLITE database

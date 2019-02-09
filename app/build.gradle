@@ -22,13 +22,14 @@ android {
         applicationId "com.kevinlu.airquality"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode 11
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -51,14 +52,11 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.android.support:design:27.1.1'
-    implementation 'com.github.paolorotolo:appintro:v4.2.2'
     implementation 'org.jetbrains:annotations:16.0.1'
     implementation 'com.kc.androidunsplash:androidunsplash:0.2.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:6.0.1'
     implementation 'com.github.MdFarhanRaja:SearchableSpinner:1.9'
     implementation 'com.google.firebase:firebase-core:16.0.5'
-    implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
 }
 

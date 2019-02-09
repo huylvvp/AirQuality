@@ -24,12 +24,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_header_item_layout.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -60,10 +64,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_mapview_internal.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\layout\\mapbox_mapview_internal.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
     },
@@ -82,18 +82,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_marker_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_marker_icon_default.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_marker_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_marker_icon_default.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_mylocation_icon_bearing.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -120,16 +108,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_popup_menu_item_layout.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_dot_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\indicator_dot_white.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -160,20 +144,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_markerview_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_markerview_icon_default.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_attribution_list_item.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\layout\\mapbox_attribution_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_map_marker_moderate.xml.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\ic_map_marker_moderate.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_enter.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_popup_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_background.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\animator-v21_design_appbar_state_list_animator.xml.flat",
@@ -216,20 +196,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_info_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_36dp.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_mylocation_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_mylocation_icon_default.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -284,20 +256,20 @@
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\layout\\activity_city.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\anim\\design_snackbar_in.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_btn_checkable.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_tint_btn_checkable.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_in.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\anim\\design_snackbar_in.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_btn_checkable.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_tint_btn_checkable.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
@@ -332,16 +304,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_text_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_view_image_marker.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\layout\\mapbox_view_image_marker.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable-xhdpi-v4\\googleg_standard_color_18.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -364,20 +336,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable\\common_google_signin_btn_icon_dark_normal.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_mylocation_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_mylocation_icon_default.png"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg.xml.flat",
@@ -396,28 +364,20 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_compass_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_compass_icon.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro2.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\fragment_intro2.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -426,10 +386,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_bg_low.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable\\notification_bg_low.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_logo_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_logo_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_abc_dialog_material_background.xml.flat",
@@ -442,10 +398,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_design_tint_password_toggle.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\color-v23\\design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_marker_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_marker_icon_default.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_text_dark_normal.xml.flat",
@@ -508,10 +460,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_mylocation_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_mylocation_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
@@ -540,10 +488,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_info_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
@@ -556,24 +500,8 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_mylocation_icon_bearing.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_info_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle_background_yellow.xml.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\circle_background_yellow.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-ldpi-v4\\mapbox_info_icon_selected.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_logo_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_logo_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -652,6 +580,10 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
@@ -696,16 +628,8 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_arrow_back_white.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_logo_helmet.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_logo_helmet.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -716,16 +640,8 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_info_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_logo_helmet.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_logo_helmet.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_design_error.xml.flat",
@@ -752,10 +668,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_mapbox_info_icon_default.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-anydpi-v21\\mapbox_info_icon_default.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\anim\\design_snackbar_out.xml"
     },
@@ -774,10 +686,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_light.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_mylocation_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_mylocation_icon_default.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_menu_item_action_area.xml.flat",
@@ -808,6 +716,10 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -816,16 +728,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_forward_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_arrow_forward_white.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -868,10 +780,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_popup_window_transparent.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable\\mapbox_popup_window_transparent.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -890,10 +798,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_items_view.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\SearchableSpinner-1.9.aar\\b832abf57ee36c35f42f48dbf9661109\\res\\layout\\items_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_logo_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_logo_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
@@ -988,10 +892,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\fragment_intro.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_text.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\layout\\design_layout_tab_text.xml"
     },
@@ -1002,10 +902,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_info_icon_selected.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1076,10 +972,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_intro_layout2.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\intro_layout2.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
@@ -1108,20 +1000,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color-v23\\abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_markerview_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_markerview_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_googleg_standard_color_18.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable-mdpi-v4\\googleg_standard_color_18.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_compass_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_compass_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1168,10 +1052,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_indicator_dot_grey.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\indicator_dot_grey.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-v21\\notification_action_background.xml"
     },
@@ -1188,10 +1068,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_info_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
@@ -1202,10 +1078,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_face_good.xml.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\ic_face_good.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_info_icon_selected.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_radio_material.xml.flat",
@@ -1264,10 +1136,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_marker_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_marker_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-ldrtl-mdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
@@ -1290,10 +1158,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_sort_black_24dp.xml.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\ic_sort_black_24dp.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_mylocation_icon_bearing.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -1332,10 +1196,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_mapbox_infowindow_content.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\layout\\mapbox_infowindow_content.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
@@ -1362,10 +1222,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_logo_helmet.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_logo_helmet.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_map_marker_hazardous.xml.flat",
@@ -1424,6 +1280,10 @@
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_exit.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_tooltip_exit.xml"
     },
@@ -1460,16 +1320,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_intro_content.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\fragment_intro_content.xml"
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1482,14 +1338,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_logo_helmet.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_logo_helmet.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_marker_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_marker_icon_default.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1508,10 +1356,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\c79852a718e3a53e3b769662c5d78e2d\\res\\drawable-xhdpi-v4\\common_full_open_on_phone.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_mylocation_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_mylocation_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
@@ -1522,10 +1366,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_shrink_fade_out_from_bottom.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_mylocation_icon_bearing.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_custom.xml.flat",
@@ -1600,10 +1440,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-xxhdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_markerview_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_markerview_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -1632,20 +1468,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigate_before_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_navigate_before_white.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_menu_overflow_material.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4_mapbox_info_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-ldpi-v4\\mapbox_info_icon_default.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
@@ -1658,10 +1486,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_progress_indicator.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\progress_indicator.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_common_google_signin_btn_text_dark.xml.flat",
@@ -1678,10 +1502,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable\\navigation_empty_icon.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_logo_helmet.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_logo_helmet.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -1712,24 +1532,12 @@
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\ic_map_marker_veryunhealthy.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_default_indicator.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\default_indicator.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_in_top.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_mapbox_compass_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxhdpi-v4\\mapbox_compass_icon.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_star_half_black_48dp.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_mylocation_icon_bearing.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_mylocation_icon_bearing.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -1766,10 +1574,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_mapbox_logo_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xhdpi-v4\\mapbox_logo_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -1828,10 +1632,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_markerview_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_markerview_icon_default.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
@@ -1842,10 +1642,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_info_icon_selected.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_background_cache_hint_selector_material_light.xml.flat",
@@ -1864,10 +1660,6 @@
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\bg_sunrise.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_done_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_done_white.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_back_black_24dp.xml.flat",
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\drawable\\ic_arrow_back_black_24dp.xml"
     },
@@ -1878,10 +1670,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_logo_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_logo_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -1902,14 +1690,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\f055a9a03d13aa5d2c356178fa366b97\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_info_icon_selected.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_mapbox_info_icon_selected.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-anydpi-v21\\mapbox_info_icon_selected.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -1950,6 +1730,10 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility_off.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-hdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_seekbar_tick_mark_material.xml.flat",
@@ -2004,10 +1788,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_skip_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_skip_white.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
@@ -2024,12 +1804,12 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_tooltip_enter.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_btn_colored_borderless_text_material.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_tooltip_enter.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\anim\\abc_tooltip_enter.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
@@ -2056,20 +1836,16 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-hdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_intro_layout.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\layout\\intro_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_tint_default.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-v21\\design_password_eye.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_password_eye.xml.flat",
+        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-v21\\design_password_eye.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_btn_check_material.xml.flat",
@@ -2100,14 +1876,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_markerview_icon_default.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_markerview_icon_default.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_navigate_next_white.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\drawable\\ic_navigate_next_white.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_dark.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
@@ -2116,16 +1884,8 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color\\abc_tint_edittext.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_mapbox_compass_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-hdpi-v4\\mapbox_compass_icon.png"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_singlechoice_material.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_mapbox_compass_icon.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-mdpi-v4\\mapbox_compass_icon.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
@@ -2170,6 +1930,10 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -2276,6 +2040,10 @@
         "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\layout\\toolbar.xml"
     },
     {
+        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
@@ -2298,10 +2066,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxxhdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_mapbox_info_icon_selected.png.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable-xxxhdpi-v4\\mapbox_info_icon_selected.png"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -2356,10 +2120,6 @@
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\color-v23\\abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_mylocation_bg_shape.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable\\mapbox_mylocation_bg_shape.xml"
-    },
-    {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\layout_select_dialog_item_material.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\layout\\select_dialog_item_material.xml"
     },
@@ -2374,10 +2134,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_48dp.png.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\8ca12a7423952fc07312875dca52ba31\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_48dp.png"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_rounded_corner.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable\\mapbox_rounded_corner.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_face_hazardous.xml.flat",
@@ -2430,10 +2186,6 @@
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility.xml.flat",
         "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\6d524d6027ae0fc8fa3d2b9a4440c88c\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
-    },
-    {
-        "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mapbox_info_bg_selector.xml.flat",
-        "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\mapbox-android-sdk-6.0.1.aar\\c9c116a1bcaffc971c0cde7e157699bf\\res\\drawable\\mapbox_info_bg_selector.xml"
     },
     {
         "merged": "C:\\Users\\kevin\\Documents\\GitHub\\AirQuality\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",

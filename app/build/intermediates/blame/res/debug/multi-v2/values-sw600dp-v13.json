@@ -14,29 +14,12 @@
                         "endOffsets": "110,180,251,323,381,439,545,609,672,854"
                     },
                     "to": {
-                        "startLines": "12,13,14,15,16,17,18,19,20,21",
+                        "startLines": "10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "728,788,858,929,1001,1059,1117,1223,1287,1350",
-                        "endLines": "12,13,14,15,16,17,18,19,20,24",
+                        "startOffsets": "611,671,741,812,884,942,1000,1106,1170,1233",
+                        "endLines": "10,11,12,13,14,15,16,17,18,22",
                         "endColumns": "59,69,70,71,57,57,105,63,62,12",
-                        "endOffsets": "783,853,924,996,1054,1112,1218,1282,1345,1527"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\kevin\\.gradle\\caches\\transforms-1\\files-1.1\\appintro-v4.2.2.aar\\35a382fc3505ac7143da1ffa760036f6\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,113",
-                        "endColumns": "57,58",
-                        "endOffsets": "108,167"
-                    },
-                    "to": {
-                        "startLines": "10,11",
-                        "startColumns": "4,4",
-                        "startOffsets": "611,669",
-                        "endColumns": "57,58",
-                        "endOffsets": "664,723"
+                        "endOffsets": "666,736,807,879,937,995,1101,1165,1228,1410"
                     }
                 },
                 {

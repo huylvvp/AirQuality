@@ -13,5 +13,5 @@
 ![City Activity](https://raw.githubusercontent.com/KevinLu/AirQuality/master/screenshots/aqi_unsplash.PNG)
 
 # TODO
-- [] Improve City Activity UI
-- [] Create a backend API for the app
+- [ ] Improve City Activity UI
+- [ ] Create a backend API for the app

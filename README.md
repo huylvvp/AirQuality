@@ -1,6 +1,8 @@
 # Air Quality
 > An Android app that displays air quality information beautifully.
 
+Simple and clean app for your air quality needs. Get detailed air quality information of over 5000 locations in the world.
+
 # Screenshots
 ![List View](https://raw.githubusercontent.com/KevinLu/AirQuality/master/screenshots/AQ_1.PNG)
 
